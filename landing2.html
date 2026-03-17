@@ -18,6 +18,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  color: #cfcfcf; /* texto cinza */
 }
 
 /* TÍTULO */
@@ -26,7 +27,7 @@ h1 {
   font-weight: 600;
   letter-spacing: 0.5px;
   text-align: center;
-  color: #f5c518;
+  color: #cfcfcf; /* título em cinza */
   font-size: 26px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -35,7 +36,7 @@ h1 {
 /* SUBTEXTO */
 p {
   text-align: center;
-  color: #cfcfcf;
+  color: #cfcfcf; /* subtítulo cinza */
   font-size: 14px;
   margin-bottom: 25px;
   line-height: 1.5;
@@ -49,7 +50,7 @@ input, textarea, select {
   border-radius: 12px;
   border: 1px solid #2a2a2a;
   background: #1c1c1c;
-  color: white;
+  color: #cfcfcf; /* texto cinza */
   font-size: 14px;
   outline: none;
   font-family: 'Poppins', sans-serif;
@@ -85,7 +86,7 @@ button:hover {
 .success {
   display: none;
   text-align: center;
-  color: #f5c518;
+  color: #cfcfcf; /* sucesso cinza */
   margin-top: 20px;
   font-size: 15px;
 }
@@ -107,33 +108,56 @@ button:hover {
 
 <div class="container">
 
-  <h1>Vamos construir seu inglês do seu jeito ✨</h1>
+  <h1>Vamos descobrir como você quer aprender inglês ✨</h1>
   <p>
-    Me conta um pouco sobre você…  
-    e eu vou montar um plano totalmente personalizado pra sua realidade 💛
+    Responda este questionário para eu criar um plano de inglês totalmente adaptado à sua rotina e necessidades 💛
   </p>
 
   <form id="form">
-    <input name="entry.1850848797" placeholder="Nome completo" required>
+    <!-- Pergunta única combinando nome, idade e profissão -->
+    <textarea name="entry.1850848797" placeholder="Nome completo, Idade, Profissão / Área de atuação" required></textarea>
+
     <input name="entry.276904402" placeholder="Seu melhor E-mail" required>
-    <input name="entry.519961555" placeholder="Profissão / Área de atuação">
-    <textarea name="entry.1884274345" placeholder="Em quais situações você mais precisa usar o inglês?"></textarea>
-    <textarea name="entry.505854986" placeholder="Seu trabalho exige inglês? Se sim, quais situação?"></textarea>
-    <select name="entry.564841370">
+
+    <!-- Pergunta de múltipla escolha (situações que mais precisa usar inglês) -->
+    <textarea name="entry.519961555" placeholder="Em quais situações você mais precisa usar o inglês?"></textarea>
+
+    <!-- Pergunta de trabalho -->
+    <textarea name="entry.1884274345" placeholder="Seu trabalho exige inglês? Se sim, quais situações?"></textarea>
+
+    <!-- Quantas vezes por semana pretende estudar inglês -->
+    <select name="entry.505854986">
       <option value="">Quantas vezes por semana você pretende estudar inglês?</option>
       <option>1 vez</option>
       <option>2 vezes</option>
       <option>3 vezes</option>
       <option>Mais de 3 vezes</option>
     </select>
-    <select name="entry.398832724">
-      <option value="">Confortável</option>
+
+    <!-- Confortável -->
+    <select name="entry.564841370">
+      <option value="">Você se sente confortável aprendendo inglês?</option>
       <option>Sim</option>
       <option>Não</option>
     </select>
-    <textarea name="entry.829407416" placeholder="Começar por frases pequenas e vocabulário"></textarea>
+
+    <!-- Começar por frases pequenas e vocabulário -->
+    <select name="entry.398832724">
+      <option value="">Quer começar por frases pequenas e vocabulário?</option>
+      <option>Sim</option>
+      <option>Não</option>
+    </select>
+
+    <!-- Viagem -->
+    <select name="entry.829407416">
+      <option value="">O inglês é necessário para viagem?</option>
+      <option>Sim</option>
+      <option>Não</option>
+    </select>
+
+    <!-- Sim estou -->
     <select name="entry.1520627930">
-      <option value="">Viagem</option>
+      <option value="">Você está motivado para aprender inglês?</option>
       <option>Sim, estou</option>
       <option>Não</option>
     </select>
