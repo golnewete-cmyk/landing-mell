@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mell | Inglês Personalizado</title>
+
+<!-- FONTES -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  background: #0d0d0d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* TÍTULO */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #f5c518;
+  font-size: 26px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* SUBTEXTO */
+p {
+  text-align: center;
+  color: #cfcfcf;
+  font-size: 14px;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+/* INPUTS E TEXTAREA */
+input, textarea, select {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+  background: #1c1c1c;
+  color: white;
+  font-size: 14px;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #888;
+  font-weight: 300;
+}
+
+/* BOTÃO */
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f5c518, #ff9f1c);
+  color: black;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* SUCESSO */
+.success {
+  display: none;
+  text-align: center;
+  color: #f5c518;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+/* CONTAINER */
+.container {
+  background: #141414;
+  padding: 40px 30px;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255, 193, 7, 0.2);
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Vamos construir seu inglês do seu jeito ✨</h1>
+  <p>
+    Me conta um pouco sobre você…  
+    e eu vou montar um plano totalmente personalizado pra sua realidade 💛
+  </p>
+
+  <form id="form">
+    <input name="entry.1850848797" placeholder="Nome completo" required>
+    <input name="entry.276904402" placeholder="Seu melhor E-mail" required>
+    <input name="entry.519961555" placeholder="Profissão / Área de atuação">
+    <textarea name="entry.1884274345" placeholder="Em quais situações você mais precisa usar o inglês?"></textarea>
+    <textarea name="entry.505854986" placeholder="Seu trabalho exige inglês? Se sim, quais situação?"></textarea>
+    <select name="entry.564841370">
+      <option value="">Quantas vezes por semana você pretende estudar inglês?</option>
+      <option>1 vez</option>
+      <option>2 vezes</option>
+      <option>3 vezes</option>
+      <option>Mais de 3 vezes</option>
+    </select>
+    <select name="entry.398832724">
+      <option value="">Confortável</option>
+      <option>Sim</option>
+      <option>Não</option>
+    </select>
+    <textarea name="entry.829407416" placeholder="Começar por frases pequenas e vocabulário"></textarea>
+    <select name="entry.1520627930">
+      <option value="">Viagem</option>
+      <option>Sim, estou</option>
+      <option>Não</option>
+    </select>
+
+    <button type="submit">Quero meu plano personalizado 💛</button>
+  </form>
+
+  <div class="success" id="success">
+    💛 Perfeito! Recebi suas respostas. Em breve entro em contato com você.
+  </div>
+
+</div>
+
+<script>
+document.getElementById("form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  fetch("https://docs.google.com/forms/d/e/1FAIpQLJUHHCbbxt5FCkLwu6/formResponse", {
+    method: "POST",
+    body: new FormData(this),
+    mode: "no-cors"
+  });
+
+  document.getElementById("form").style.display = "none";
+  document.getElementById("success").style.display = "block";
+});
+</script>
+
+</body>
+</html>
