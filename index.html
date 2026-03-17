@@ -5,14 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mell | Inglês Personalizado</title>
 
-<!-- FONTES -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  font-weight: 300;
   background: #0d0d0d;
   display: flex;
   justify-content: center;
@@ -20,38 +18,26 @@ body {
   min-height: 100vh;
   color: #cfcfcf;
 }
-
-/* TÍTULO */
 h1 {
   font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  color: #f5c518;
   text-align: center;
-  color: #f5c518; /* título dourado */
   font-size: 26px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
-
-/* SUBTEXTO */
 p {
   text-align: center;
-  color: #cfcfcf;
   font-size: 14px;
-  margin-bottom: 25px;
+  color: #cfcfcf;
   line-height: 1.5;
+  margin-bottom: 25px;
 }
-
-/* PERGUNTAS MULTIPLA ESCOLHA */
 label {
   display: block;
   margin-top: 15px;
   margin-bottom: 5px;
   font-weight: 500;
-  color: #cfcfcf;
 }
-
-/* INPUTS E TEXTAREA */
 input, textarea, select {
   width: 100%;
   padding: 14px;
@@ -62,16 +48,7 @@ input, textarea, select {
   color: #cfcfcf;
   font-size: 14px;
   outline: none;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
 }
-
-input::placeholder, textarea::placeholder {
-  color: #888;
-  font-weight: 300;
-}
-
-/* BOTÃO */
 button {
   width: 100%;
   margin-top: 20px;
@@ -81,17 +58,13 @@ button {
   background: linear-gradient(135deg, #f5c518, #ff9f1c);
   color: black;
   font-weight: 600;
-  font-size: 15px;
   cursor: pointer;
-  transition: 0.3s;
+  font-size: 15px;
 }
-
 button:hover {
   transform: translateY(-2px);
   opacity: 0.9;
 }
-
-/* SUCESSO */
 .success {
   display: none;
   text-align: center;
@@ -99,8 +72,6 @@ button:hover {
   margin-top: 20px;
   font-size: 15px;
 }
-
-/* CONTAINER */
 .container {
   background: #141414;
   padding: 40px 30px;
@@ -124,7 +95,6 @@ button:hover {
   </p>
 
   <form id="form">
-
     <label for="nome">Nome completo</label>
     <input name="entry.1850848797" id="nome" placeholder="Seu nome completo" required>
 
@@ -138,9 +108,9 @@ button:hover {
     <input name="entry.519961555" id="email" placeholder="Seu melhor e-mail" required>
 
     <label for="estudo">Você já estudou inglês antes? Se sim, por quanto tempo?</label>
-    <textarea name="entry.532497531" id="estudo" placeholder="Ex: 1 ano, curso online"></textarea>
+    <textarea name="entry.532497531" id="estudo"></textarea>
 
-    <label for="nivel">Como você considera seu nível?</label>
+    <label for="nivel">Como você considera seu nível atualmente?</label>
     <select name="entry.1004412104" id="nivel">
       <option value="">Selecione</option>
       <option>Iniciante</option>
@@ -150,13 +120,12 @@ button:hover {
     </select>
 
     <label for="objetivo">O que você quer alcançar com o inglês?</label>
-    <textarea name="entry.1715182955" id="objetivo" placeholder="Ex: Conversar em viagens, trabalho"></textarea>
+    <textarea name="entry.1715182955" id="objetivo"></textarea>
 
     <label for="recado">Quer me deixar um recado?</label>
-    <textarea name="entry.485928189" id="recado" placeholder="Ex: Estou animado(a) para aprender!"></textarea>
+    <textarea name="entry.485928189" id="recado"></textarea>
 
     <button type="submit">Quero meu plano personalizado 💛</button>
-
   </form>
 
   <div class="success" id="success">
@@ -168,13 +137,11 @@ button:hover {
 <script>
 document.getElementById("form").addEventListener("submit", function(e) {
   e.preventDefault();
-
-  fetch("https://docs.google.com/forms/d/e/1FAIpQLSccip6yGbnvBREs7t-_uEZu9h5Hax_GGUFfcch1lfo7z1Rjw/formResponse", {
+  fetch("https://docs.google.com/forms/d/e/1FAIpQLSccip6yGbnvBREs7t-_uEzEu9h5Hax_GGUFfcch1lfo7z1Rjw/formResponse", {
     method: "POST",
     body: new FormData(this),
     mode: "no-cors"
   });
-
   document.getElementById("form").style.display = "none";
   document.getElementById("success").style.display = "block";
 });
