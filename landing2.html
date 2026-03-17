@@ -5,14 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mell | Inglês Personalizado</title>
 
-<!-- FONTES -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  font-weight: 300;
   background: #0d0d0d;
   display: flex;
   justify-content: center;
@@ -20,38 +18,26 @@ body {
   min-height: 100vh;
   color: #cfcfcf;
 }
-
-/* TÍTULO */
 h1 {
   font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  color: #f5c518;
   text-align: center;
-  color: #f5c518; /* título dourado */
   font-size: 26px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
-
-/* SUBTEXTO */
 p {
   text-align: center;
-  color: #cfcfcf;
   font-size: 14px;
-  margin-bottom: 25px;
+  color: #cfcfcf;
   line-height: 1.5;
+  margin-bottom: 25px;
 }
-
-/* PERGUNTAS MULTIPLA ESCOLHA */
 label {
   display: block;
   margin-top: 15px;
   margin-bottom: 5px;
   font-weight: 500;
-  color: #cfcfcf;
 }
-
-/* INPUTS E TEXTAREA */
 input, textarea, select {
   width: 100%;
   padding: 14px;
@@ -62,16 +48,7 @@ input, textarea, select {
   color: #cfcfcf;
   font-size: 14px;
   outline: none;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
 }
-
-input::placeholder, textarea::placeholder {
-  color: #888;
-  font-weight: 300;
-}
-
-/* BOTÃO */
 button {
   width: 100%;
   margin-top: 20px;
@@ -83,15 +60,11 @@ button {
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
-  transition: 0.3s;
 }
-
 button:hover {
   transform: translateY(-2px);
   opacity: 0.9;
 }
-
-/* SUCESSO */
 .success {
   display: none;
   text-align: center;
@@ -99,8 +72,6 @@ button:hover {
   margin-top: 20px;
   font-size: 15px;
 }
-
-/* CONTAINER */
 .container {
   background: #141414;
   padding: 40px 30px;
@@ -123,21 +94,20 @@ button:hover {
   </p>
 
   <form id="form">
-    <!-- Pergunta única combinando nome, idade e profissão -->
-    <label for="nome">Nome completo, Idade, Profissão / Área de atuação</label>
-    <textarea name="entry.1850848797" id="nome" placeholder="Ex: João Silva, 25, Designer" required></textarea>
+    <label>Nome completo, Idade, Profissão / Área de atuação</label>
+    <textarea name="entry.1850848797" placeholder="Ex: João Silva, 25, Designer" required></textarea>
 
-    <label for="email">Seu melhor E-mail</label>
-    <input name="entry.276904402" id="email" placeholder="Ex: joao@email.com" required>
+    <label>Seu melhor E-mail</label>
+    <input name="entry.276904402" placeholder="Ex: joao@email.com" required>
 
-    <label for="situacoes">Em quais situações você mais precisa usar o inglês?</label>
-    <textarea name="entry.519961555" id="situacoes" placeholder="Ex: Trabalho, viagem, estudos"></textarea>
+    <label>Em quais situações você mais precisa usar o inglês?</label>
+    <textarea name="entry.519961555"></textarea>
 
-    <label for="trabalho">Seu trabalho exige inglês? Se sim, quais situações?</label>
-    <textarea name="entry.1884274345" id="trabalho" placeholder="Ex: E-mails, reuniões, apresentações"></textarea>
+    <label>Seu trabalho exige inglês? Se sim, quais situações?</label>
+    <textarea name="entry.1884274345"></textarea>
 
-    <label for="frequencia">Quantas vezes por semana você pretende estudar inglês?</label>
-    <select name="entry.505854986" id="frequencia">
+    <label>Quantas vezes por semana você pretende estudar inglês?</label>
+    <select name="entry.505854986">
       <option value="">Selecione</option>
       <option>1 vez</option>
       <option>2 vezes</option>
@@ -145,29 +115,29 @@ button:hover {
       <option>Mais de 3 vezes</option>
     </select>
 
-    <label for="confortavel">Você se sente confortável aprendendo inglês?</label>
-    <select name="entry.564841370" id="confortavel">
+    <label>Você se sente confortável aprendendo inglês?</label>
+    <select name="entry.564841370">
       <option value="">Selecione</option>
       <option>Sim</option>
       <option>Não</option>
     </select>
 
-    <label for="frases">Quer começar por frases pequenas e vocabulário?</label>
-    <select name="entry.398832724" id="frases">
+    <label>Quer começar por frases pequenas e vocabulário?</label>
+    <select name="entry.398832724">
+      <option value="">Selecione</option>
+      <option>Sim</option>
+      <option>Não</option>
+    </select>    
+
+    <label>O inglês é necessário para viagem?</label>
+    <select name="entry.829407416">
       <option value="">Selecione</option>
       <option>Sim</option>
       <option>Não</option>
     </select>
 
-    <label for="viagem">O inglês é necessário para viagem?</label>
-    <select name="entry.829407416" id="viagem">
-      <option value="">Selecione</option>
-      <option>Sim</option>
-      <option>Não</option>
-    </select>
-
-    <label for="motivacao">Você está motivado para aprender inglês?</label>
-    <select name="entry.1520627930" id="motivacao">
+    <label>Você está motivado para aprender inglês?</label>
+    <select name="entry.1520627930">
       <option value="">Selecione</option>
       <option>Sim, estou</option>
       <option>Não</option>
@@ -185,13 +155,11 @@ button:hover {
 <script>
 document.getElementById("form").addEventListener("submit", function(e) {
   e.preventDefault();
-
-  fetch("https://docs.google.com/forms/d/e/1FAIpQLJUHHCbbxt5FCkLwu6/formResponse", {
+  fetch("https://docs.google.com/forms/d/e/1FAIpQLScjidkwcU778XFBG2EK8ZrjMbVpIdxzLJGDoQgXWRIKzXB4GA/formResponse", {
     method: "POST",
     body: new FormData(this),
     mode: "no-cors"
   });
-
   document.getElementById("form").style.display = "none";
   document.getElementById("success").style.display = "block";
 });
