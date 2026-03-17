@@ -18,6 +18,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  color: #cfcfcf;
 }
 
 /* TÍTULO */
@@ -25,55 +26,14 @@ h1 {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
   letter-spacing: 0.5px;
-}
-
-/* SUBTEXTO */
-p {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
-}
-
-/* INPUTS E TEXTAREA */
-input, textarea, select {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
-}
-
-/* BOTÃO */
-button {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-}
-
-/* PLACEHOLDER MAIS DELICADO */
-input::placeholder,
-textarea::placeholder {
-  font-weight: 300;
-  opacity: 0.7;
-}
-
-/* CONTAINER */
-.container {
-  background: #141414;
-  padding: 40px 30px;
-  border-radius: 25px;
-  width: 90%;
-  max-width: 420px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-  border: 1px solid rgba(255, 193, 7, 0.2);
-}
-
-/* TÍTULO */
-h1 {
-  font-family: 'Playfair Display', serif;
   text-align: center;
-  color: #f5c518;
+  color: #f5c518; /* título dourado */
   font-size: 26px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-/* SUBTÍTULO */
+/* SUBTEXTO */
 p {
   text-align: center;
   color: #cfcfcf;
@@ -82,21 +42,33 @@ p {
   line-height: 1.5;
 }
 
-/* INPUTS */
+/* PERGUNTAS MULTIPLA ESCOLHA */
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #cfcfcf;
+}
+
+/* INPUTS E TEXTAREA */
 input, textarea, select {
   width: 100%;
   padding: 14px;
-  margin-top: 10px;
+  margin-top: 5px;
   border-radius: 12px;
   border: 1px solid #2a2a2a;
   background: #1c1c1c;
-  color: white;
+  color: #cfcfcf;
   font-size: 14px;
   outline: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
 }
 
 input::placeholder, textarea::placeholder {
   color: #888;
+  font-weight: 300;
 }
 
 /* BOTÃO */
@@ -123,14 +95,24 @@ button:hover {
 .success {
   display: none;
   text-align: center;
-  color: #f5c518;
+  color: #cfcfcf;
   margin-top: 20px;
   font-size: 15px;
+}
+
+/* CONTAINER */
+.container {
+  background: #141414;
+  padding: 40px 30px;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255, 193, 7, 0.2);
 }
 </style>
 
 </head>
-
 <body>
 
 <div class="container">
@@ -143,24 +125,35 @@ button:hover {
 
   <form id="form">
 
-    <input name="entry.1850848797" placeholder="Seu nome completo" required>
-    <input name="entry.787716634" placeholder="Seu WhatsApp" required>
-    <input name="entry.1517412042" placeholder="Sua ocupação atual">
-    <input name="entry.519961555" placeholder="Seu melhor e-mail" required>
+    <label for="nome">Nome completo</label>
+    <input name="entry.1850848797" id="nome" placeholder="Seu nome completo" required>
 
-    <textarea name="entry.532497531" placeholder="Você já estudou inglês antes? Se sim, por quanto tempo?"></textarea>
+    <label for="whatsapp">WhatsApp</label>
+    <input name="entry.787716634" id="whatsapp" placeholder="Seu WhatsApp" required>
 
-    <select name="entry.1004412104">
-      <option value="">Como você considera seu nível?</option>
+    <label for="ocupacao">Ocupação atual</label>
+    <input name="entry.1517412042" id="ocupacao" placeholder="Sua ocupação atual">
+
+    <label for="email">Seu melhor e-mail</label>
+    <input name="entry.519961555" id="email" placeholder="Seu melhor e-mail" required>
+
+    <label for="estudo">Você já estudou inglês antes? Se sim, por quanto tempo?</label>
+    <textarea name="entry.532497531" id="estudo" placeholder="Ex: 1 ano, curso online"></textarea>
+
+    <label for="nivel">Como você considera seu nível?</label>
+    <select name="entry.1004412104" id="nivel">
+      <option value="">Selecione</option>
       <option>Iniciante</option>
       <option>Básico</option>
       <option>Intermediário</option>
       <option>Avançado</option>
     </select>
 
-    <textarea name="entry.1715182955" placeholder="O que você quer alcançar com o inglês?"></textarea>
+    <label for="objetivo">O que você quer alcançar com o inglês?</label>
+    <textarea name="entry.1715182955" id="objetivo" placeholder="Ex: Conversar em viagens, trabalho"></textarea>
 
-    <textarea name="entry.485928189" placeholder="Quer me deixar um recado?"></textarea>
+    <label for="recado">Quer me deixar um recado?</label>
+    <textarea name="entry.485928189" id="recado" placeholder="Ex: Estou animado(a) para aprender!"></textarea>
 
     <button type="submit">Quero meu plano personalizado 💛</button>
 
