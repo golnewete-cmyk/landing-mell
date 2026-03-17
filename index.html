@@ -1,94 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Mell | Plano de Inglês Personalizado</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mell | Inglês Personalizado</title>
 
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #f8e8f0, #e6d6ff);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
+<!-- FONTES -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
-    .container {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      width: 400px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0d0d0d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
-    h1 {
-      text-align: center;
-      color: #6b4eff;
-      margin-bottom: 10px;
-    }
+/* CONTAINER */
+.container {
+  background: #141414;
+  padding: 40px 30px;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255, 193, 7, 0.2);
+}
 
-    p {
-      text-align: center;
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 20px;
-    }
+/* TÍTULO */
+h1 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  color: #f5c518;
+  font-size: 26px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
-    input, textarea, select {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 12px;
-      border-radius: 10px;
-      border: 1px solid #ddd;
-      font-size: 14px;
-    }
+/* SUBTÍTULO */
+p {
+  text-align: center;
+  color: #cfcfcf;
+  font-size: 14px;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
 
-    button {
-      width: 100%;
-      padding: 14px;
-      border: none;
-      border-radius: 12px;
-      background: #6b4eff;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+/* INPUTS */
+input, textarea, select {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+  background: #1c1c1c;
+  color: white;
+  font-size: 14px;
+  outline: none;
+}
 
-    button:hover {
-      background: #5939d6;
-    }
+input::placeholder, textarea::placeholder {
+  color: #888;
+}
 
-    .success {
-      display: none;
-      text-align: center;
-      color: green;
-      margin-top: 15px;
-    }
+/* BOTÃO */
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f5c518, #ff9f1c);
+  color: black;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-  </style>
+button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* SUCESSO */
+.success {
+  display: none;
+  text-align: center;
+  color: #f5c518;
+  margin-top: 20px;
+  font-size: 15px;
+}
+</style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-  <h1>Plano Personalizado</h1>
-  <p>Responda rápido e a Mell vai montar algo único pra você 💜</p>
+  <h1>Vamos construir seu inglês do seu jeito ✨</h1>
+  <p>
+    Me conta um pouco sobre você…  
+    e eu vou montar um plano totalmente personalizado pra sua realidade 💛
+  </p>
 
   <form id="form">
 
-    <input name="entry.1850848797" placeholder="Nome completo" required>
-    <input name="entry.787716634" placeholder="WhatsApp" required>
+    <input name="entry.1850848797" placeholder="Seu nome completo" required>
+    <input name="entry.787716634" placeholder="Seu WhatsApp" required>
     <input name="entry.1517412042" placeholder="Sua ocupação atual">
     <input name="entry.519961555" placeholder="Seu melhor e-mail" required>
 
-    <textarea name="entry.532497531" placeholder="Você já estudou inglês? Se sim, por quanto tempo?"></textarea>
+    <textarea name="entry.532497531" placeholder="Você já estudou inglês antes? Se sim, por quanto tempo?"></textarea>
 
     <select name="entry.1004412104">
-      <option value="">Seu nível atual</option>
+      <option value="">Como você considera seu nível?</option>
       <option>Iniciante</option>
       <option>Básico</option>
       <option>Intermediário</option>
@@ -97,14 +127,14 @@
 
     <textarea name="entry.1715182955" placeholder="O que você quer alcançar com o inglês?"></textarea>
 
-    <textarea name="entry.485928189" placeholder="Quer deixar algum recado?"></textarea>
+    <textarea name="entry.485928189" placeholder="Quer me deixar um recado?"></textarea>
 
-    <button type="submit">Quero meu plano 💜</button>
+    <button type="submit">Quero meu plano personalizado 💛</button>
 
   </form>
 
   <div class="success" id="success">
-    💜 Perfeito! A Mell vai analisar suas respostas e já entra em contato.
+    💛 Perfeito! Recebi suas respostas. Em breve entro em contato com você.
   </div>
 
 </div>
