@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mell | Inglês Personalizado</title>
 
+<!-- FONTES -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -77,7 +78,7 @@ button:hover {
   padding: 40px 30px;
   border-radius: 25px;
   width: 90%;
-  max-width: 420px;
+  max-width: 480px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.6);
   border: 1px solid rgba(255, 193, 7, 0.2);
 }
@@ -94,20 +95,37 @@ button:hover {
   </p>
 
   <form id="form">
-    <label>Nome completo, Idade, Profissão / Área de atuação</label>
-    <textarea name="entry.1850848797" placeholder="Ex: João Silva, 25, Designer" required></textarea>
+    <!-- Perguntas exatas do Form 2 -->
+    <label>Nome completo:</label>
+    <input name="entry.1850848797" placeholder="Ex: João Silva" required>
+
+    <label>Idade:</label>
+    <input name="entry.276904402" placeholder="Ex: 25" required>
+
+    <label>Profissão / Área de atuação:</label>
+    <input name="entry.1884274345" placeholder="Ex: Designer" required>
 
     <label>Seu melhor E-mail</label>
-    <input name="entry.276904402" placeholder="Ex: joao@email.com" required>
+    <input name="entry.564841370" placeholder="Ex: joao@email.com" required>
 
     <label>Em quais situações você mais precisa usar o inglês?</label>
-    <textarea name="entry.519961555"></textarea>
+    <textarea name="entry.505854986" placeholder="Ex: Trabalho, viagem, estudos"></textarea>
 
-    <label>Seu trabalho exige inglês? Se sim, quais situações?</label>
-    <textarea name="entry.1884274345"></textarea>
+    <label>Como você se sentiria se o foco fosse conversação, com aulas preparadas de acordo com seu OBJETIVO?</label>
+    <select name="entry.398832724">
+      <option value="">Selecione</option>
+      <option>Me sentiria confortável</option>
+      <option>Não me sentiria confortável</option>
+    </select>
+
+    <label>Se sua resposta anterior foi: Não me sentiria confortável em já começar pela conversação, qual habilidade gostaria de começar?</label>
+    <textarea name="entry.829407416" placeholder="Ex: Gramática, vocabulário, escrita"></textarea>
+
+    <label>Seu trabalho exige inglês? Se sim, quais situação?</label>
+    <textarea name="entry.1520627930" placeholder="Ex: E-mails, reuniões, apresentações"></textarea>
 
     <label>Quantas vezes por semana você pretende estudar inglês?</label>
-    <select name="entry.505854986">
+    <select name="entry.1715182955">
       <option value="">Selecione</option>
       <option>1 vez</option>
       <option>2 vezes</option>
@@ -115,31 +133,13 @@ button:hover {
       <option>Mais de 3 vezes</option>
     </select>
 
-    <label>Você se sente confortável aprendendo inglês?</label>
-    <select name="entry.564841370">
-      <option value="">Selecione</option>
-      <option>Sim</option>
-      <option>Não</option>
-    </select>
+    <label>Você tem algum objetivo com prazo definido? Exemplo:</label>
+    <textarea name="entry.276904403" placeholder='Ex: Falar fluentemente até dezembro'></textarea>
 
-    <label>Quer começar por frases pequenas e vocabulário?</label>
-    <select name="entry.398832724">
+    <label>Com base nas suas respostas, eu vou desenvolver um plano de aulas personalizado, com materiais e atividades focados exatamente no seu objetivo. O prazo para preparação do material é de até 7 dias, para garantir que tudo seja feito com qualidade e direcionado às suas necessidades, Você está de acordo?</label>
+    <select name="entry.276904404">
       <option value="">Selecione</option>
-      <option>Sim</option>
-      <option>Não</option>
-    </select>    
-
-    <label>O inglês é necessário para viagem?</label>
-    <select name="entry.829407416">
-      <option value="">Selecione</option>
-      <option>Sim</option>
-      <option>Não</option>
-    </select>
-
-    <label>Você está motivado para aprender inglês?</label>
-    <select name="entry.1520627930">
-      <option value="">Selecione</option>
-      <option>Sim, estou</option>
+      <option>Sim, estou de acordo</option>
       <option>Não</option>
     </select>
 
