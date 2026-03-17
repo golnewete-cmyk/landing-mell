@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Mell | Plano de Inglês Personalizado</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #f8e8f0, #e6d6ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      width: 400px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #6b4eff;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: #6b4eff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #5939d6;
+    }
+
+    .success {
+      display: none;
+      text-align: center;
+      color: green;
+      margin-top: 15px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Plano Personalizado</h1>
+  <p>Responda rápido e a Mell vai montar algo único pra você 💜</p>
+
+  <form id="form">
+
+    <input name="entry.1850848797" placeholder="Nome completo" required>
+    <input name="entry.787716634" placeholder="WhatsApp" required>
+    <input name="entry.1517412042" placeholder="Sua ocupação atual">
+    <input name="entry.519961555" placeholder="Seu melhor e-mail" required>
+
+    <textarea name="entry.532497531" placeholder="Você já estudou inglês? Se sim, por quanto tempo?"></textarea>
+
+    <select name="entry.1004412104">
+      <option value="">Seu nível atual</option>
+      <option>Iniciante</option>
+      <option>Básico</option>
+      <option>Intermediário</option>
+      <option>Avançado</option>
+    </select>
+
+    <textarea name="entry.1715182955" placeholder="O que você quer alcançar com o inglês?"></textarea>
+
+    <textarea name="entry.485928189" placeholder="Quer deixar algum recado?"></textarea>
+
+    <button type="submit">Quero meu plano 💜</button>
+
+  </form>
+
+  <div class="success" id="success">
+    💜 Perfeito! A Mell vai analisar suas respostas e já entra em contato.
+  </div>
+
+</div>
+
+<script>
+document.getElementById("form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  fetch("https://docs.google.com/forms/d/e/1FAIpQLSccip6yGbnvBREs7t-_uEZu9h5Hax_GGUFfcch1lfo7z1Rjw/formResponse", {
+    method: "POST",
+    body: new FormData(this),
+    mode: "no-cors"
+  });
+
+  document.getElementById("form").style.display = "none";
+  document.getElementById("success").style.display = "block";
+});
+</script>
+
+</body>
+</html>
