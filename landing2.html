@@ -91,56 +91,65 @@ button:hover {
 
   <h1>Vamos descobrir como você quer aprender inglês ✨</h1>
   <p>
-    Responda este questionário para eu criar um plano de inglês totalmente adaptado à sua rotina e necessidades 💛
+    Responda este questionário para eu criar um plano totalmente adaptado à sua rotina e necessidades 💛
   </p>
 
   <form id="form">
-    <!-- Perguntas exatas do Form 2 -->
-    <label>Nome completo:</label>
-    <input name="entry.1850848797" placeholder="Ex: João Silva" required>
+    <!-- 1) Nome completo, Idade, Profissão -->
+    <label>Nome completo:<br>Idade:<br>Profissão / Área de atuação:</label>
+    <textarea name="entry.1850848797" placeholder="Ex: João Silva, 25, Designer" required></textarea>
 
-    <label>Idade:</label>
-    <input name="entry.276904402" placeholder="Ex: 25" required>
-
-    <label>Profissão / Área de atuação:</label>
-    <input name="entry.1884274345" placeholder="Ex: Designer" required>
-
+    <!-- 2) E-mail -->
     <label>Seu melhor E-mail</label>
-    <input name="entry.564841370" placeholder="Ex: joao@email.com" required>
+    <input name="entry.276904402" type="email" placeholder="Ex: joao@email.com" required>
 
+    <!-- 3) Situações de uso do inglês -->
     <label>Em quais situações você mais precisa usar o inglês?</label>
-    <textarea name="entry.505854986" placeholder="Ex: Trabalho, viagem, estudos"></textarea>
+    <textarea name="entry.519961555" placeholder="Ex: Trabalho, viagem, estudos"></textarea>
 
+    <!-- 4) Conforto com foco em conversação -->
     <label>Como você se sentiria se o foco fosse conversação, com aulas preparadas de acordo com seu OBJETIVO?</label>
+    <select name="entry.564841370">
+      <option value="">Selecione</option>
+      <option>Confortável</option>
+      <option>Não me sentiria bem ainda</option>
+    </select>
+
+    <!-- 5) Habilidade a começar -->
+    <label>Se sua resposta anterior foi: Não me sentiria confortável em já começar pela conversação, qual habilidade gostaria de começar?</label>
     <select name="entry.398832724">
       <option value="">Selecione</option>
-      <option>Me sentiria confortável</option>
-      <option>Não me sentiria confortável</option>
+      <option>Começar por frases pequenas e vocabulário</option>
+      <option>Vocabulário profissional</option>
+      <option>Compreensão auditiva</option>
+      <option>Outro</option>
     </select>
 
-    <label>Se sua resposta anterior foi: Não me sentiria confortável em já começar pela conversação, qual habilidade gostaria de começar?</label>
-    <textarea name="entry.829407416" placeholder="Ex: Gramática, vocabulário, escrita"></textarea>
-
+    <!-- 6) Trabalho exige inglês -->
     <label>Seu trabalho exige inglês? Se sim, quais situação?</label>
-    <textarea name="entry.1520627930" placeholder="Ex: E-mails, reuniões, apresentações"></textarea>
+    <textarea name="entry.829407416" placeholder="Ex: E-mails, reuniões, apresentações"></textarea>
 
+    <!-- 7) Frequência de estudo -->
     <label>Quantas vezes por semana você pretende estudar inglês?</label>
-    <select name="entry.1715182955">
+    <input name="entry.1520627930" placeholder="Ex: 3 vezes" type="text">
+
+    <!-- 8) Objetivo com prazo -->
+    <label>Você tem algum objetivo com prazo definido? Exemplo:</label>
+    <select name="entry.505854986">
       <option value="">Selecione</option>
-      <option>1 vez</option>
-      <option>2 vezes</option>
-      <option>3 vezes</option>
-      <option>Mais de 3 vezes</option>
+      <option>Viagem</option>
+      <option>Trabalho</option>
+      <option>Entrevista de emprego</option>
+      <option>Mudança de país</option>
+      <option>Outro</option>
     </select>
 
-    <label>Você tem algum objetivo com prazo definido? Exemplo:</label>
-    <textarea name="entry.276904403" placeholder='Ex: Falar fluentemente até dezembro'></textarea>
-
+    <!-- 9) Aceite do prazo para preparação do plano -->
     <label>Com base nas suas respostas, eu vou desenvolver um plano de aulas personalizado, com materiais e atividades focados exatamente no seu objetivo. O prazo para preparação do material é de até 7 dias, para garantir que tudo seja feito com qualidade e direcionado às suas necessidades, Você está de acordo?</label>
-    <select name="entry.276904404">
+    <select name="entry.1520627930">
       <option value="">Selecione</option>
-      <option>Sim, estou de acordo</option>
-      <option>Não</option>
+      <option>Sim, estou</option>
+      <option>Não, muito obrigada, thank you next!</option>
     </select>
 
     <button type="submit">Quero meu plano personalizado 💛</button>
@@ -153,7 +162,7 @@ button:hover {
 </div>
 
 <script>
-document.getElementById("form").addEventListener("submit", function(e) {
+document.getElementById("form").addEventListener("submit", function(e){
   e.preventDefault();
   fetch("https://docs.google.com/forms/d/e/1FAIpQLScjidkwcU778XFBG2EK8ZrjMbVpIdxzLJGDoQgXWRIKzXB4GA/formResponse", {
     method: "POST",
