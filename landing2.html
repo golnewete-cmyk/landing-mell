@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mell | Inglês Personalizado</title>
 
-<!-- FONTES -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -55,7 +54,6 @@ input, textarea, select {
 }
 input::placeholder, textarea::placeholder {
   color: #888;
-  font-weight: 300;
 }
 button {
   width: 100%;
@@ -68,7 +66,6 @@ button {
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
-  font-family: 'Poppins', sans-serif;
 }
 button:hover {
   transform: translateY(-2px);
@@ -80,7 +77,6 @@ button:hover {
   color: #cfcfcf;
   margin-top: 20px;
   font-size: 15px;
-  font-family: 'Poppins', sans-serif;
 }
 .container {
   background: #141414;
@@ -92,16 +88,12 @@ button:hover {
   border: 1px solid rgba(255, 193, 7, 0.2);
 }
 </style>
-
 </head>
 <body>
 
 <div class="container">
-
   <h1>Vamos descobrir como você quer aprender inglês ✨</h1>
-  <p>
-    Responda este questionário para eu criar um plano totalmente adaptado à sua rotina e necessidades 💛
-  </p>
+  <p>Responda este questionário para eu criar um plano totalmente adaptado à sua rotina e necessidades 💛</p>
 
   <form id="form">
 
@@ -159,7 +151,6 @@ button:hover {
   <div class="success" id="success">
     💛 Perfeito! Recebi suas respostas. Em breve entro em contato com você.
   </div>
-
 </div>
 
 <script>
@@ -169,9 +160,10 @@ document.getElementById("form").addEventListener("submit", function(e){
     method: "POST",
     body: new FormData(this),
     mode: "no-cors"
+  }).then(() => {
+    document.getElementById("form").style.display = "none";
+    document.getElementById("success").style.display = "block";
   });
-  document.getElementById("form").style.display = "none";
-  document.getElementById("success").style.display = "block";
 });
 </script>
 
