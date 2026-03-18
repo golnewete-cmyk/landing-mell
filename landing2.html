@@ -6,7 +6,7 @@
 <title>Mell | Inglês Personalizado</title>
 
 <!-- FONTES -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -20,11 +20,11 @@ body {
   color: #cfcfcf;
 }
 h1 {
-  font-family: 'Playfair Display', serif;
   color: #f5c518;
   text-align: center;
   font-size: 26px;
   margin: 10px 0;
+  font-weight: 600;
 }
 p {
   text-align: center;
@@ -38,6 +38,7 @@ label {
   margin-top: 15px;
   margin-bottom: 5px;
   font-weight: 500;
+  color: #cfcfcf;
 }
 input, textarea, select {
   width: 100%;
@@ -49,6 +50,12 @@ input, textarea, select {
   color: #cfcfcf;
   font-size: 14px;
   outline: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+input::placeholder, textarea::placeholder {
+  color: #888;
+  font-weight: 300;
 }
 button {
   width: 100%;
@@ -61,6 +68,7 @@ button {
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
+  font-family: 'Poppins', sans-serif;
 }
 button:hover {
   transform: translateY(-2px);
@@ -72,6 +80,7 @@ button:hover {
   color: #cfcfcf;
   margin-top: 20px;
   font-size: 15px;
+  font-family: 'Poppins', sans-serif;
 }
 .container {
   background: #141414;
@@ -95,19 +104,15 @@ button:hover {
   </p>
 
   <form id="form">
-    <!-- 1) Nome completo, Idade, Profissão -->
     <label>Nome completo:<br>Idade:<br>Profissão / Área de atuação:</label>
     <textarea name="entry.1850848797" placeholder="Ex: João Silva, 25, Designer" required></textarea>
 
-    <!-- 2) E-mail -->
     <label>Seu melhor E-mail</label>
     <input name="entry.276904402" type="email" placeholder="Ex: joao@email.com" required>
 
-    <!-- 3) Situações de uso do inglês -->
     <label>Em quais situações você mais precisa usar o inglês?</label>
     <textarea name="entry.519961555" placeholder="Ex: Trabalho, viagem, estudos"></textarea>
 
-    <!-- 4) Conforto com foco em conversação -->
     <label>Como você se sentiria se o foco fosse conversação, com aulas preparadas de acordo com seu OBJETIVO?</label>
     <select name="entry.564841370">
       <option value="">Selecione</option>
@@ -115,7 +120,6 @@ button:hover {
       <option>Não me sentiria bem ainda</option>
     </select>
 
-    <!-- 5) Habilidade a começar -->
     <label>Se sua resposta anterior foi: Não me sentiria confortável em já começar pela conversação, qual habilidade gostaria de começar?</label>
     <select name="entry.398832724">
       <option value="">Selecione</option>
@@ -125,15 +129,12 @@ button:hover {
       <option>Outro</option>
     </select>
 
-    <!-- 6) Trabalho exige inglês -->
     <label>Seu trabalho exige inglês? Se sim, quais situação?</label>
     <textarea name="entry.829407416" placeholder="Ex: E-mails, reuniões, apresentações"></textarea>
 
-    <!-- 7) Frequência de estudo -->
     <label>Quantas vezes por semana você pretende estudar inglês?</label>
     <input name="entry.1520627930" placeholder="Ex: 3 vezes" type="text">
 
-    <!-- 8) Objetivo com prazo -->
     <label>Você tem algum objetivo com prazo definido? Exemplo:</label>
     <select name="entry.505854986">
       <option value="">Selecione</option>
@@ -144,7 +145,6 @@ button:hover {
       <option>Outro</option>
     </select>
 
-    <!-- 9) Aceite do prazo para preparação do plano -->
     <label>Com base nas suas respostas, eu vou desenvolver um plano de aulas personalizado, com materiais e atividades focados exatamente no seu objetivo. O prazo para preparação do material é de até 7 dias, para garantir que tudo seja feito com qualidade e direcionado às suas necessidades, Você está de acordo?</label>
     <select name="entry.1520627930">
       <option value="">Selecione</option>
