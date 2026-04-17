@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mellen Oliveira | Premium Mentoring & Safety</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #050505;
+            --accent: #D4AF37; /* Dourado Clássico */
+            --accent-light: #F9E4B7;
+            --text-muted: #a0a0a0;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--primary);
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Efeito de Gradiente de Fundo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- HERO SECTION --- */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            padding: 5px;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #fff, var(--accent), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            color: var(--accent);
+            font-weight: 200;
+            font-size: 1.2rem;
+            letter-spacing: 5px;
+            margin-bottom: 2rem;
+        }
+
+        /* --- BUTTONS --- */
+        .btn-gold {
+            display: inline-block;
+            padding: 18px 40px;
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 2px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-gold:hover {
+            background: var(--accent);
+            color: #000;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            transform: translateY(-3px);
+        }
+
+        /* --- SECTIONS --- */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+            margin: 20px auto;
+        }
+
+        /* --- EXPERIENCE GRID --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--glass);
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            background: rgba(212, 175, 55, 0.02);
+        }
+
+        .card h3 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- SPECIFIC AREAS --- */
+        .dual-service {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .service-box {
+            flex: 1;
+            padding: 40px;
+            border-left: 2px solid var(--accent);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .contact-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+            .dual-service { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://raw.githubusercontent.com/seu-usuario/seu-repo/main/profile.png" alt="Mellen Oliveira" class="profile-img">
+        <h1 class="hero-title">Mellen Oliveira</h1>
+        <p class="hero-subtitle">High-Level Communication & Safety</p>
+        <a href="#english" class="btn-gold">SOLICITAR AULAS PARTICULARES</a>
+    </header>
+
+    <div class="container">
+        
+        <section id="english">
+            <h2 class="section-title">English Mentoring</h2>
+            <div class="dual-service">
+                <div class="service-box">
+                    <h3>Vivência Internacional</h3>
+                    <p>Com quase 10 anos de experiência acumulada na <b>Bélgica e Holanda</b>, desenvolvi uma fluência que transcende o acadêmico. Minha abordagem é focada na comunicação real, adaptabilidade cultural e no refinamento linguístico necessário para ambientes multiculturais de alto nível.</p>
+                </div>
+                <div style="flex: 1; text-align: center;">
+                    <p style="margin-bottom: 30px; font-style: italic; color: var(--text-muted);">
+                        "Mais do que ensinar um idioma, eu conecto você ao mundo através de uma comunicação excepcional."
+                    </p>
+                    <a href="https://forms.gle/seu-link-aqui" target="_blank" class="btn-gold">RESERVAR MINHA VAGA</a>
+                </div>
+            </div>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid rgba(212, 175, 55, 0.1);">
+
+        <section id="safety">
+            <h2 class="section-title">Safety & Operations</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Segurança do Trabalho</h3>
+                    <p>Técnica pela ETEC, especializada em protocolos de segurança, NR-13 e primeiros socorros. Foco absoluto na preservação do capital humano e conformidade técnica.</p>
+                </div>
+                <div class="card">
+                    <h3>Gestão de Operações</h3>
+                    <p>Experiência robusta na Cronos Engenharia, gerenciando logística complexa, agendas de engenharia e atendimento corporativo de alta demanda.</p>
+                </div>
+                <div class="card">
+                    <h3>Coordenação Global</h3>
+                    <p>Expertise em logística de viagens internacionais e recepção de clientes, garantindo que cada detalhe operacional seja executado com perfeição.</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 60px; text-align: center;">
+                <p>Para parcerias corporativas e consultoria técnica:</p>
+                <a href="mailto:teachermellenoliveira@gmail.com" class="contact-link" style="font-size: 1.5rem;">teachermellenoliveira@gmail.com</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 MELLEN OLIVEIRA. ALL RIGHTS RESERVED.</p>
+        <p>Desenvolvido para mentes exclusivas.</p>
+    </footer>
+
+</body>
+</html>
