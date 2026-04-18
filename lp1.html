@@ -3,257 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mellen Oliveira | Premium Mentoring & Safety</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <title>Mellen Oliveira | Excellence & Safety</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@100;300;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #050505;
-            --accent: #D4AF37; /* Dourado Clássico */
-            --accent-light: #F9E4B7;
-            --text-muted: #a0a0a0;
-            --glass: rgba(255, 255, 255, 0.03);
+            --bg: #030303;
+            --gold: #C5A059;
+            --gold-bright: #F9E4B7;
+            --glass: rgba(255, 255, 255, 0.02);
+            --border: rgba(197, 160, 89, 0.3);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--bg); 
+            color: #fff; 
+            font-family: 'Montserrat', sans-serif; 
+            overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
-        body {
-            background-color: var(--primary);
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Efeito de Gradiente de Fundo */
-        body::before {
-            content: "";
+        /* Background Dinâmico */
+        .bg-glow {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+            width: 100vw; height: 100vh;
+            background: radial-gradient(circle at 50% -20%, #1a1a1a 0%, #030303 80%);
             z-index: -1;
         }
 
-        h1, h2, h3 {
-            font-family: 'Cinzel', serif;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* --- HERO SECTION --- */
-        header {
-            height: 100vh;
+        /* --- HERO --- */
+        .hero {
+            height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 0 20px;
         }
 
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 2px solid var(--accent);
-            padding: 5px;
-            margin-bottom: 2rem;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to right, #fff, var(--accent), #fff);
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            letter-spacing: 15px;
+            background: linear-gradient(to bottom, #fff 30%, var(--gold) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: fadeIn 2s ease-out;
         }
 
-        .hero-subtitle {
-            color: var(--accent);
-            font-weight: 200;
-            font-size: 1.2rem;
-            letter-spacing: 5px;
-            margin-bottom: 2rem;
+        .hero p {
+            font-weight: 100;
+            letter-spacing: 8px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-top: 10px;
+            opacity: 0.8;
         }
 
-        /* --- BUTTONS --- */
-        .btn-gold {
-            display: inline-block;
-            padding: 18px 40px;
-            background: transparent;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 2px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+        /* --- SEÇÕES --- */
+        section { padding: 120px 20px; max-width: 1200px; margin: 0 auto; }
+        
+        .section-header { text-align: center; margin-bottom: 80px; }
+        .section-header h2 { 
+            font-family: 'Cinzel', serif; 
+            font-size: 2.5rem; 
+            color: #fff;
+            margin-bottom: 15px;
         }
+        .gold-line { width: 60px; height: 1px; background: var(--gold); margin: 0 auto; }
 
-        .btn-gold:hover {
-            background: var(--accent);
-            color: #000;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-            transform: translateY(-3px);
-        }
-
-        /* --- SECTIONS --- */
-        section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 4rem;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: "";
-            display: block;
-            width: 50px;
-            height: 2px;
-            background: var(--accent);
-            margin: 20px auto;
-        }
-
-        /* --- EXPERIENCE GRID --- */
-        .grid {
+        /* --- GRID DE SEGURANÇA (TOP) --- */
+        .safety-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .card {
+        .safety-card {
             background: var(--glass);
-            padding: 40px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: 0.3s;
-            backdrop-filter: blur(10px);
-        }
-
-        .card:hover {
-            border-color: var(--accent);
-            background: rgba(212, 175, 55, 0.02);
-        }
-
-        .card h3 {
-            color: var(--accent);
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* --- SPECIFIC AREAS --- */
-        .dual-service {
-            display: flex;
-            gap: 50px;
-            align-items: center;
-            margin-top: 50px;
-        }
-
-        .service-box {
-            flex: 1;
-            padding: 40px;
-            border-left: 2px solid var(--accent);
-        }
-
-        /* --- FOOTER --- */
-        footer {
+            border: 1px solid var(--border);
+            padding: 50px 30px;
             text-align: center;
-            padding: 60px 0;
-            border-top: 1px solid rgba(212, 175, 55, 0.1);
-            font-size: 0.8rem;
-            color: var(--text-muted);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
         }
 
-        .contact-link {
-            color: var(--accent);
+        .safety-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 10px 40px rgba(197, 160, 89, 0.1);
+        }
+
+        .safety-card i {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 25px;
+            transition: 0.5s;
+            filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.3));
+        }
+
+        .safety-card:hover i {
+            transform: scale(1.1) rotate(5deg);
+            filter: drop-shadow(0 0 20px var(--gold));
+        }
+
+        .safety-card h3 { font-family: 'Cinzel', serif; margin-bottom: 15px; letter-spacing: 2px; }
+        .safety-card p { font-size: 0.9rem; color: #ccc; line-height: 1.8; }
+
+        /* --- BOTÕES PREMIUM --- */
+        .btn-container { text-align: center; margin-top: 50px; }
+        
+        .btn-premium {
+            display: inline-block;
+            padding: 20px 50px;
+            border: 1px solid var(--gold);
+            background: transparent;
+            color: #fff;
             text-decoration: none;
-            font-weight: bold;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            position: relative;
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        .btn-premium:hover {
+            background: var(--gold);
+            color: #000;
+            box-shadow: 0 0 30px rgba(197, 160, 89, 0.5);
+        }
+
+        /* --- ENGLISH SECTION (BOTTOM) --- */
+        .english-section {
+            background: linear-gradient(to right, rgba(197, 160, 89, 0.05), transparent);
+            border-radius: 2px;
+            padding: 80px 40px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .english-copy {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+            color: #eee;
+            font-size: 1.1rem;
+            line-height: 2;
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: var(--gold);
         }
 
         @media (max-width: 768px) {
-            .hero-title { font-size: 2.2rem; }
-            .dual-service { flex-direction: column; }
+            .hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="https://raw.githubusercontent.com/seu-usuario/seu-repo/main/profile.png" alt="Mellen Oliveira" class="profile-img">
-        <h1 class="hero-title">Mellen Oliveira</h1>
-        <p class="hero-subtitle">High-Level Communication & Safety</p>
-        <a href="#english" class="btn-gold">SOLICITAR AULAS PARTICULARES</a>
+    <div class="bg-glow"></div>
+
+    <header class="hero">
+        <h1>MELLEN OLIVEIRA</h1>
+        <p>Consultoria Técnica & Mentoria Global</p>
     </header>
 
-    <div class="container">
-        
-        <section id="english">
-            <h2 class="section-title">English Mentoring</h2>
-            <div class="dual-service">
-                <div class="service-box">
-                    <h3>Vivência Internacional</h3>
-                    <p>Com quase 10 anos de experiência acumulada na <b>Bélgica e Holanda</b>, desenvolvi uma fluência que transcende o acadêmico. Minha abordagem é focada na comunicação real, adaptabilidade cultural e no refinamento linguístico necessário para ambientes multiculturais de alto nível.</p>
-                </div>
-                <div style="flex: 1; text-align: center;">
-                    <p style="margin-bottom: 30px; font-style: italic; color: var(--text-muted);">
-                        "Mais do que ensinar um idioma, eu conecto você ao mundo através de uma comunicação excepcional."
-                    </p>
-                    <a href="https://forms.gle/seu-link-aqui" target="_blank" class="btn-gold">RESERVAR MINHA VAGA</a>
-                </div>
-            </div>
-        </section>
+    <section id="safety">
+        <div class="section-header">
+            <h2>Industrial Safety & NR-13</h2>
+            <div class="gold-line"></div>
+        </div>
 
-        <hr style="border: 0; border-top: 1px solid rgba(212, 175, 55, 0.1);">
-
-        <section id="safety">
-            <h2 class="section-title">Safety & Operations</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Segurança do Trabalho</h3>
-                    <p>Técnica pela ETEC, especializada em protocolos de segurança, NR-13 e primeiros socorros. Foco absoluto na preservação do capital humano e conformidade técnica.</p>
-                </div>
-                <div class="card">
-                    <h3>Gestão de Operações</h3>
-                    <p>Experiência robusta na Cronos Engenharia, gerenciando logística complexa, agendas de engenharia e atendimento corporativo de alta demanda.</p>
-                </div>
-                <div class="card">
-                    <h3>Coordenação Global</h3>
-                    <p>Expertise em logística de viagens internacionais e recepção de clientes, garantindo que cada detalhe operacional seja executado com perfeição.</p>
-                </div>
+        <div class="safety-grid">
+            <div class="safety-card">
+                <i class="fas fa-shield-halved"></i>
+                <h3>Segurança Ativa</h3>
+                <p>Treinamentos personalizados que transformam normas técnicas em cultura de prevenção. Foco em resultados e integridade absoluta.</p>
             </div>
-            
-            <div style="margin-top: 60px; text-align: center;">
-                <p>Para parcerias corporativas e consultoria técnica:</p>
-                <a href="mailto:teachermellenoliveira@gmail.com" class="contact-link" style="font-size: 1.5rem;">teachermellenoliveira@gmail.com</a>
+            <div class="safety-card">
+                <i class="fas fa-file-contract"></i>
+                <h3>Conformidade NR-13</h3>
+                <p>Gestão rigorosa de inspeções e documentação técnica para garantir que sua operação nunca pare por falhas de segurança.</p>
             </div>
-        </section>
+            <div class="safety-card">
+                <i class="fas fa-user-gear"></i>
+                <h3>Gestão Logística</h3>
+                <p>Eficiência em campo: coordenação de inspetores e engenheiros com precisão cirúrgica e foco em prazos críticos.</p>
+            </div>
+        </div>
 
-    </div>
+        <div class="btn-container">
+            <p style="margin-bottom: 20px; color: var(--gold);">Eleve o padrão de segurança da sua empresa.</p>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=teachermellenoliveira@gmail.com&su=Solicitação de Treinamento Técnico&body=Olá Mellen, gostaria de solicitar um orçamento para treinamento de segurança." class="btn-premium" target="_blank">
+                CONTRATAR TREINAMENTO <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="english">
+        <div class="section-header">
+            <h2>English for Leaders</h2>
+            <div class="gold-line"></div>
+        </div>
+
+        <div class="english-section">
+            <div class="english-copy">
+                Experiência internacional legítima na <b>Holanda e Bélgica</b>. 
+                Aprenda o inglês utilizado no mercado europeu por quem viveu a imersão cultural e profissional no mais alto nível.
+            </div>
+            <a href="https://forms.gle/SEU_LINK_DO_FORMS" class="btn-premium">
+                RESERVAR MENTORIA <i class="fas fa-graduation-cap" style="margin-left: 10px;"></i>
+            </a>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2026 MELLEN OLIVEIRA. ALL RIGHTS RESERVED.</p>
-        <p>Desenvolvido para mentes exclusivas.</p>
+        <p>&copy; 2026 MELLEN OLIVEIRA | LUXURY DESIGN & PROFESSIONAL STANDARDS</p>
     </footer>
 
 </body>
