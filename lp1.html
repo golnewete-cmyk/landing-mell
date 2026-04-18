@@ -24,7 +24,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Background Dinâmico */
         .bg-glow {
             position: fixed;
             width: 100vw; height: 100vh;
@@ -32,9 +31,8 @@
             z-index: -1;
         }
 
-        /* --- HERO --- */
         .hero {
-            height: 80vh;
+            height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -62,19 +60,17 @@
             opacity: 0.8;
         }
 
-        /* --- SEÇÕES --- */
-        section { padding: 120px 20px; max-width: 1200px; margin: 0 auto; }
+        section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
         
         .section-header { text-align: center; margin-bottom: 80px; }
         .section-header h2 { 
             font-family: 'Cinzel', serif; 
-            font-size: 2.5rem; 
+            font-size: 2.2rem; 
             color: #fff;
             margin-bottom: 15px;
         }
         .gold-line { width: 60px; height: 1px; background: var(--gold); margin: 0 auto; }
 
-        /* --- GRID DE SEGURANÇA (TOP) --- */
         .safety-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -88,13 +84,12 @@
             text-align: center;
             transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             position: relative;
-            overflow: hidden;
         }
 
         .safety-card:hover {
             transform: translateY(-10px);
             border-color: var(--gold);
-            box-shadow: 0 10px 40px rgba(197, 160, 89, 0.1);
+            box-shadow: 0 10px 40px rgba(197, 160, 89, 0.15);
         }
 
         .safety-card i {
@@ -102,18 +97,17 @@
             color: var(--gold);
             margin-bottom: 25px;
             transition: 0.5s;
-            filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.3));
+            filter: drop-shadow(0 0 8px rgba(197, 160, 89, 0.3));
         }
 
         .safety-card:hover i {
-            transform: scale(1.1) rotate(5deg);
-            filter: drop-shadow(0 0 20px var(--gold));
+            transform: scale(1.15) rotate(5deg);
+            filter: drop-shadow(0 0 15px var(--gold));
         }
 
         .safety-card h3 { font-family: 'Cinzel', serif; margin-bottom: 15px; letter-spacing: 2px; }
         .safety-card p { font-size: 0.9rem; color: #ccc; line-height: 1.8; }
 
-        /* --- BOTÕES PREMIUM --- */
         .btn-container { text-align: center; margin-top: 50px; }
         
         .btn-premium {
@@ -126,52 +120,55 @@
             letter-spacing: 3px;
             font-size: 0.8rem;
             font-weight: 600;
-            position: relative;
             transition: 0.4s;
             cursor: pointer;
+            text-transform: uppercase;
         }
 
         .btn-premium:hover {
             background: var(--gold);
             color: #000;
-            box-shadow: 0 0 30px rgba(197, 160, 89, 0.5);
+            box-shadow: 0 0 30px rgba(197, 160, 89, 0.4);
+            transform: scale(1.05);
         }
 
-        /* --- ENGLISH SECTION (BOTTOM) --- */
         .english-section {
-            background: linear-gradient(to right, rgba(197, 160, 89, 0.05), transparent);
-            border-radius: 2px;
+            background: linear-gradient(135deg, rgba(197, 160, 89, 0.08) 0%, transparent 100%);
+            border: 1px solid rgba(197, 160, 89, 0.1);
             padding: 80px 40px;
-            margin-top: 50px;
+            margin-top: 20px;
             text-align: center;
+            backdrop-filter: blur(5px);
         }
 
         .english-copy {
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto 40px;
-            font-weight: 300;
-            color: #eee;
-            font-size: 1.1rem;
-            line-height: 2;
+            font-weight: 200;
+            color: #fff;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            letter-spacing: 1px;
         }
 
-        /* Animações */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         footer {
-            padding: 60px 0;
+            padding: 80px 0 40px;
             text-align: center;
-            border-top: 1px solid var(--border);
+            border-top: 1px solid rgba(197, 160, 89, 0.1);
             font-size: 0.7rem;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             color: var(--gold);
+            opacity: 0.7;
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
+            .hero h1 { font-size: 2.8rem; letter-spacing: 8px; }
+            section { padding: 60px 20px; }
         }
     </style>
 </head>
@@ -181,60 +178,60 @@
 
     <header class="hero">
         <h1>MELLEN OLIVEIRA</h1>
-        <p>Consultoria Técnica & Mentoria Global</p>
+        <p>Segurança Industrial & Comunicação Global</p>
     </header>
 
     <section id="safety">
         <div class="section-header">
-            <h2>Industrial Safety & NR-13</h2>
+            <h2>Safety & Engineering</h2>
             <div class="gold-line"></div>
         </div>
 
         <div class="safety-grid">
             <div class="safety-card">
-                <i class="fas fa-shield-halved"></i>
-                <h3>Segurança Ativa</h3>
-                <p>Treinamentos personalizados que transformam normas técnicas em cultura de prevenção. Foco em resultados e integridade absoluta.</p>
+                <i class="fas fa-hard-hat"></i>
+                <h3>Treinamentos Técnicos</h3>
+                <p>Capacitação de alto impacto em segurança ocupacional. Transformamos conformidade legal em excelência operacional e proteção real.</p>
             </div>
             <div class="safety-card">
-                <i class="fas fa-file-contract"></i>
-                <h3>Conformidade NR-13</h3>
-                <p>Gestão rigorosa de inspeções e documentação técnica para garantir que sua operação nunca pare por falhas de segurança.</p>
+                <i class="fas fa-clipboard-check"></i>
+                <h3>Consultoria NR-13</h3>
+                <p>Especialista em inspeções e gestão de segurança. Garantindo que sua infraestrutura opere dentro dos mais rigorosos padrões mundiais.</p>
             </div>
             <div class="safety-card">
-                <i class="fas fa-user-gear"></i>
-                <h3>Gestão Logística</h3>
-                <p>Eficiência em campo: coordenação de inspetores e engenheiros com precisão cirúrgica e foco em prazos críticos.</p>
+                <i class="fas fa-globe"></i>
+                <h3>Logística Corporativa</h3>
+                <p>Coordenação estratégica de engenharia e operações complexas, unindo precisão técnica a uma gestão de agenda impecável.</p>
             </div>
         </div>
 
         <div class="btn-container">
-            <p style="margin-bottom: 20px; color: var(--gold);">Eleve o padrão de segurança da sua empresa.</p>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=teachermellenoliveira@gmail.com&su=Solicitação de Treinamento Técnico&body=Olá Mellen, gostaria de solicitar um orçamento para treinamento de segurança." class="btn-premium" target="_blank">
-                CONTRATAR TREINAMENTO <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+            <p style="margin-bottom: 25px; color: #aaa; font-size: 0.9rem; letter-spacing: 1px;">Solicite uma proposta personalizada para sua empresa.</p>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=teachermellenoliveira@gmail.com&su=Consultoria em Segurança do Trabalho&body=Olá Mellen, gostaria de entender mais sobre seus serviços de treinamento e consultoria técnica." class="btn-premium" target="_blank">
+                Contatar Consultoria <i class="fas fa-envelope" style="margin-left: 12px;"></i>
             </a>
         </div>
     </section>
 
     <section id="english">
         <div class="section-header">
-            <h2>English for Leaders</h2>
+            <h2>Elite English Mentoring</h2>
             <div class="gold-line"></div>
         </div>
 
         <div class="english-section">
             <div class="english-copy">
-                Experiência internacional legítima na <b>Holanda e Bélgica</b>. 
-                Aprenda o inglês utilizado no mercado europeu por quem viveu a imersão cultural e profissional no mais alto nível.
+                Domine a língua oficial do sucesso global. 
+                Uma metodologia lapidada por anos de imersão profissional na <b>Bélgica e Holanda</b>, desenhada para quem não aceita menos que a fluência absoluta.
             </div>
-            <a href="https://forms.gle/SEU_LINK_DO_FORMS" class="btn-premium">
-                RESERVAR MENTORIA <i class="fas fa-graduation-cap" style="margin-left: 10px;"></i>
+            <a href="https://golnewete-cmyk.github.io/landing-mell/" class="btn-premium">
+                Acessar Mentoria <i class="fas fa-external-link-alt" style="margin-left: 12px;"></i>
             </a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 MELLEN OLIVEIRA | LUXURY DESIGN & PROFESSIONAL STANDARDS</p>
+        <p>&copy; 2026 MELLEN OLIVEIRA | HIGH-END PROFESSIONAL SERVICES</p>
     </footer>
 
 </body>
