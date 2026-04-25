@@ -3,42 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mellen Oliveira | Personal Branding de Elite</title>
+    <title>Mellen Oliveira | The Luxury Mindset</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@100;300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@100;200;300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #000000;
-            --gold-linear: linear-gradient(90deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
-            --silver-linear: linear-gradient(90deg, #707070, #E0E0E0, #808080, #FFFFFF, #909090);
-            --orange: #FF6B00;
+            --bg: #030303;
             --gold: #D4AF37;
-            --silver: #C0C0C0;
-            --glass: rgba(255, 255, 255, 0.02);
-            --feminine-font: 'Cormorant Garamond', serif;
+            --gold-light: #F9E4B7;
+            --silver: #E5E5E5;
+            --orange: #FF6B00;
+            --accent-gradient: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            --glass-white: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        
         body { 
             background-color: var(--bg); 
             color: #fff; 
-            font-family: var(--feminine-font); 
+            font-family: 'Montserrat', sans-serif; 
             overflow-x: hidden;
             scroll-behavior: smooth;
+            line-height: 1.8;
         }
 
-        /* Fundo - Malha de Cores */
-        .mesh-bg {
+        /* Camada de Design Dinâmico */
+        .aura-bg {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
+            width: 100%; height: 100%;
+            top: 0; left: 0;
             background: 
-                radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.12) 0, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(255, 107, 0, 0.08) 0, transparent 50%),
-                radial-gradient(at 50% 50%, rgba(192, 192, 192, 0.03) 0, transparent 50%);
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(255, 107, 0, 0.08) 0%, transparent 40%);
             z-index: -1;
         }
 
-        /* Hero */
+        /* Hero Cinema */
         .hero {
             height: 100vh;
             display: flex;
@@ -47,231 +49,348 @@
             align-items: center;
             text-align: center;
             padding: 0 20px;
+            position: relative;
+        }
+
+        .hero-pre {
+            font-weight: 100;
+            letter-spacing: 15px;
+            font-size: 0.7rem;
+            color: var(--silver);
+            margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
         .hero h1 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 12vw, 6rem);
+            font-size: clamp(3rem, 15vw, 8rem);
             font-weight: 900;
-            background: var(--gold-linear);
+            letter-spacing: 25px;
+            background: var(--accent-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: 20px;
-            text-shadow: 0 10px 30px rgba(182, 141, 64, 0.15);
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
         }
 
-        .hero-btns {
+        .hero-nav {
+            margin-top: 60px;
             display: flex;
-            gap: 20px;
-            margin-top: 50px;
+            gap: 30px;
         }
 
-        .btn-nav {
-            padding: 18px 35px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.65rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+        .btn-minimal {
+            padding: 15px 40px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass-white);
             color: #fff;
             text-decoration: none;
-            border: 1px solid var(--silver);
-            transition: 0.5s;
-            background: rgba(255,255,255,0.03);
+            font-size: 0.65rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
             backdrop-filter: blur(10px);
+            transition: all 0.5s ease;
         }
 
-        .btn-nav:hover { border-color: var(--orange); color: var(--orange); }
+        .btn-minimal:hover {
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.05);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
 
-        /* Seções de Texto */
-        .content-section { padding: 120px 20px; max-width: 1000px; margin: 0 auto; }
+        /* Seções de Copy Macro */
+        .section-container {
+            padding: 200px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-        .tagline {
-            font-family: 'Montserrat', sans-serif;
+        .reveal-box {
+            opacity: 1;
+            margin-bottom: 120px;
+        }
+
+        .label {
             color: var(--orange);
             font-weight: 600;
-            letter-spacing: 4px;
+            font-size: 0.8rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
             display: block;
-            margin-bottom: 15px;
-            font-size: 0.75rem;
         }
 
-        h2 { font-family: 'Cinzel', serif; font-size: 2.8rem; margin-bottom: 30px; background: var(--silver-linear); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        h2 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
 
-        p { font-size: 1.35rem; line-height: 1.7; font-weight: 300; color: #d1d1d1; margin-bottom: 40px; font-style: italic; }
+        h2 span { color: var(--gold); }
 
-        /* Glow Buttons */
+        .copy-text {
+            font-size: 1.15rem;
+            font-weight: 200;
+            color: #aaa;
+            max-width: 800px;
+            margin-bottom: 50px;
+        }
+
+        /* Grid de Influência - Estilo Revista */
+        .influence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .premium-card {
+            background: var(--glass-white);
+            border: 1px solid var(--glass-border);
+            padding: 60px 40px;
+            transition: 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-card:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Glow Específicos nos Botões */
         .btn-glow {
-            display: inline-flex;
+            display: flex;
             align-items: center;
-            gap: 15px;
-            padding: 18px 45px;
-            border-radius: 50px;
+            justify-content: center;
+            gap: 12px;
+            padding: 20px 45px;
+            border-radius: 4px;
             text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
+            font-size: 0.75rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 0.8rem;
             transition: 0.4s;
-            border: none;
-            cursor: pointer;
         }
 
-        .btn-insta { background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045); color: #fff; box-shadow: 0 0 15px rgba(253, 29, 29, 0.3); }
-        .btn-insta:hover { box-shadow: 0 0 35px rgba(253, 29, 29, 0.6); transform: scale(1.03); }
+        .insta-glow { 
+            background: #fff; color: #000; 
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); 
+        }
+        .insta-glow:hover { box-shadow: 0 0 40px rgba(253, 29, 29, 0.5); background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045); color: #fff; }
 
-        .btn-tiktok { background: #000; color: #fff; border: 1.5px solid #fff; box-shadow: 0 0 15px rgba(37, 244, 238, 0.3); }
-        .btn-tiktok:hover { box-shadow: 0 0 35px rgba(254, 44, 85, 0.5); transform: scale(1.03); }
+        .tiktok-glow { 
+            background: transparent; color: #fff; border: 1px solid #fff; 
+        }
+        .tiktok-glow:hover { background: #fff; color: #000; box-shadow: 0 0 40px rgba(37, 244, 238, 0.6); }
 
-        .btn-shop { background: var(--orange); color: #000; box-shadow: 0 0 15px rgba(255, 107, 0, 0.3); }
-        .btn-shop:hover { box-shadow: 0 0 35px rgba(255, 107, 0, 0.6); transform: scale(1.03); }
+        .shop-glow { 
+            background: var(--orange); color: #000; 
+        }
+        .shop-glow:hover { box-shadow: 0 0 40px rgba(255, 107, 0, 0.6); transform: scale(1.05); }
 
-        .btn-form { background: var(--gold-linear); color: #000; width: 100%; justify-content: center; }
-
-        /* Networking Box */
-        .networking-box {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 60px 40px;
-            border-radius: 15px;
-            backdrop-filter: blur(15px);
+        /* Networking - Design de Formulário Limpo */
+        .form-section {
+            background: linear-gradient(180deg, #050505 0%, #0a0a0a 100%);
+            padding: 100px 60px;
+            border: 1px solid var(--glass-border);
+            border-radius: 2px;
         }
 
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
 
         input, textarea {
             width: 100%;
-            padding: 15px;
-            background: rgba(0,0,0,0.4);
-            border: 1px solid rgba(192, 192, 192, 0.1);
-            color: #fff;
-            font-family: var(--feminine-font);
-            font-size: 1.1rem;
-            border-radius: 5px;
-        }
-
-        /* Success Message Overlay */
-        #success-msg {
-            display: none;
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid var(--gold);
             padding: 20px;
-            text-align: center;
-            margin-bottom: 20px;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
             font-family: 'Montserrat';
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            color: var(--gold-bright);
+            font-weight: 200;
+            font-size: 0.9rem;
+            transition: 0.4s;
         }
 
-        .email-fixed {
+        input:focus { border-color: var(--gold); background: rgba(255,255,255,0.02); }
+
+        .btn-submit {
+            background: var(--accent-gradient);
+            color: #000;
+            border: none;
+            width: 100%;
+            padding: 25px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        .btn-submit:hover { letter-spacing: 12px; filter: brightness(1.2); }
+
+        /* Floating Email */
+        .email-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px; height: 60px;
-            background: var(--gold-linear);
+            bottom: 40px; right: 40px;
+            width: 70px; height: 70px;
+            background: #fff;
+            color: #000;
             border-radius: 50%;
-            display: flex; justify-content: center; align-items: center;
-            color: #000; font-size: 1.2rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-            z-index: 100; transition: 0.4s;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem;
+            z-index: 1000;
+            transition: 0.5s;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        .email-float:hover { background: var(--gold); transform: rotate(-15deg) scale(1.1); }
+
+        /* Success Message */
+        #success-notif {
+            display: none;
+            position: fixed;
+            top: 20px; left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: #000;
+            padding: 15px 40px;
+            font-weight: 700;
+            z-index: 9999;
+            box-shadow: 0 0 30px rgba(212,175,55,0.4);
         }
 
         @media (max-width: 768px) {
-            .form-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 3rem; letter-spacing: 10px; }
-            .hero-btns { flex-direction: column; width: 80%; }
+            .input-row { grid-template-columns: 1fr; }
+            .hero h1 { letter-spacing: 10px; }
+            .hero-nav { flex-direction: column; width: 100%; padding: 0 20px; }
+            .section-container { padding: 100px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="mesh-bg"></div>
+    <div id="success-notif">ENVIADO COM SUCESSO. VERIFIQUE SEU E-MAIL.</div>
+    <div class="aura-bg"></div>
 
-    <a href="mailto:teachermellenoliveira@gmail.com" class="email-fixed"><i class="fas fa-envelope"></i></a>
+    <a href="mailto:teachermellenoliveira@gmail.com" class="email-float">
+        <i class="fas fa-paper-plane"></i>
+    </a>
 
     <header class="hero">
-        <span class="tagline">WORLDWIDE EXPERIENCE</span>
+        <span class="hero-pre">Quiet Luxury & Bold Mindset</span>
         <h1>MELLEN</h1>
-        <h1 style="margin-top: -15px;">OLIVEIRA</h1>
-        <div class="hero-btns">
-            <a href="#biografia" class="btn-nav">Trajetória</a>
-            <a href="#networking" class="btn-nav">Networking</a>
-            <a href="#english" class="btn-nav">Inglês</a>
+        <h1 style="margin-top: -30px;">OLIVEIRA</h1>
+        <div class="hero-nav">
+            <a href="#about" class="btn-minimal">Trajetória</a>
+            <a href="#influence" class="btn-minimal">Digital Presence</a>
+            <a href="#networking" class="btn-minimal">Networking</a>
+            <a href="#english" class="btn-minimal">Inglês de Elite</a>
         </div>
     </header>
 
-    <section id="biografia" class="content-section">
-        <div class="copy-block">
-            <span class="tagline">A TRAJETÓRIA</span>
-            <h2>Da Logística Corporativa <br><span>ao Mundo.</span></h2>
-            <p>
-                Com uma mente moldada pela precisão da logística corporativa, Mellen Oliveira construiu sua base gerenciando operações complexas, agendas de engenharia e atendimento de alto nível. Mas sua inquietação a levou além das fronteiras. Com quase 6 anos de imersão entre a Bélgica e a Holanda, ela transformou o cuidado e a comunicação em uma expertise intercultural única.
+    <section id="about" class="section-container">
+        <div class="reveal-box">
+            <span class="label">The Background</span>
+            <h2>Repertório que <span>Molda</span><br>o Posicionamento.</h2>
+            <p class="copy-text">
+                O luxo de Mellen Oliveira não vem da superfície, mas do repertório. Com uma base sólida construída na logística corporativa — gerenciando agendas de engenharia e operações de alta complexidade — Mellen refinou a arte da organização e da entrega impecável. 
+                <br><br>
+                Sua inquietude a levou a viver quase 6 anos no coração da Europa (Bélgica e Holanda), onde como AuPair e especialista em cuidados, absorveu a cultura do "old money", a fluência impecável e a capacidade de adaptação que hoje definem sua presença digital.
             </p>
         </div>
+    </section>
 
-        <div style="display: grid; gap: 60px; margin-top: 80px;">
-            <div class="copy-block">
-                <span class="tagline">LIFESTYLE & MINDSET</span>
-                <h3>Influência com Repertório</h3>
-                <p>Mais do que números, uma comunidade de mulheres que buscam posicionamento. No Instagram e TikTok, Mellen traduz sua vida "soy fuego latina" em lições de autoliderança e mentalidade imbatível.</p>
-                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                    <a href="https://www.instagram.com/mellennoliveira?igsh=MW9vZzJ5cmM2MjBhMg==" target="_blank" class="btn-glow btn-insta"><i class="fab fa-instagram"></i> Instagram</a>
-                    <a href="https://www.tiktok.com/@soyfuegolatina?_r=1&_t=ZS-95qBimpAIky" target="_blank" class="btn-glow btn-tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
-                </div>
+    <section id="influence" class="section-container">
+        <div class="reveal-box">
+            <span class="label">Digital Voice</span>
+            <h2>Influência com <span>Propósito.</span></h2>
+            <p class="copy-text">Cada post é uma lição de mentalidade. Mellen não apenas compartilha uma vida, ela ensina como o posicionamento e a comunicação podem ser as ferramentas de maior poder para uma mulher moderna.</p>
+        </div>
+
+        <div class="influence-grid">
+            <div class="premium-card">
+                <span class="label">High-End Lifestyle</span>
+                <h3>Instagram</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 30px;">A estética do sucesso. Insights diários sobre mindset feminino e vida global.</p>
+                <a href="https://www.instagram.com/mellennoliveira?igsh=MW9vZzJ5cmM2MjBhMg==" target="_blank" class="btn-glow insta-glow">
+                    <i class="fab fa-instagram"></i> Follow the Life
+                </a>
             </div>
 
-            <div class="copy-block">
-                <span class="tagline">CURADORIA</span>
-                <h3>TikTok Shop: Escolhas de Elite</h3>
-                <p>O reflexo de uma rotina prática e sofisticada. Uma seleção de itens que elevam o padrão de quem não aceita o básico.</p>
-                <a href="https://vt.tiktok.com/ZS96cCPY6/?page=TikTokShop" target="_blank" class="btn-glow btn-shop"><i class="fas fa-shopping-bag"></i> Acessar Vitrine</a>
+            <div class="premium-card">
+                <span class="label">Real & Raw</span>
+                <h3>TikTok</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 30px;">Onde a autenticidade latina encontra a disciplina europeia. Choque de realidade e motivação.</p>
+                <a href="https://www.tiktok.com/@soyfuegolatina?_r=1&_t=ZS-95qBimpAIky" target="_blank" class="btn-glow tiktok-glow">
+                    <i class="fab fa-tiktok"></i> Experience the Fire
+                </a>
+            </div>
+
+            <div class="premium-card">
+                <span class="label">Curated Selection</span>
+                <h3>TikTok Shop</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 30px;">A vitrine exclusiva do que realmente funciona. Produtos escolhidos por quem não aceita o básico.</p>
+                <a href="https://vt.tiktok.com/ZS96cCPY6/?page=TikTokShop" target="_blank" class="btn-glow shop-glow">
+                    <i class="fas fa-shopping-cart"></i> Acessar Vitrine
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="networking" class="content-section">
-        <div class="networking-box">
-            <div id="success-msg">SOLICITAÇÃO ENVIADA! <br> Por favor, confira seu e-mail para os próximos passos.</div>
+    <section id="networking" class="section-container">
+        <div class="form-section">
+            <span class="label">Private Circle</span>
+            <h2>Access the <span>Networking</span></h2>
+            <p class="copy-text">Para parcerias, trocas de alto valor e conexões estratégicas. Preencha os detalhes e aguarde o contato para entrada no círculo restrito.</p>
             
-            <span class="tagline">EXCLUSIVE ACCESS</span>
-            <h2>Círculo de Networking</h2>
-            <p style="font-size: 1.1rem; font-style: normal; margin-bottom: 30px;">Junte-se a um grupo focado em desenvolvimento, parcerias e conexões estratégicas sob a liderança da Mellen.</p>
-            
-            <form id="netForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfRglfXn_F17GRbUIc_lrbeDP8wHrvJNV7uqC7_YJSOke6-Kw/formResponse" method="POST" target="hidden_iframe" onsubmit="showMsg()">
-                <div class="form-grid">
+            <form id="netForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfRglfXn_F17GRbUIc_lrbeDP8wHrvJNV7uqC7_YJSOke6-Kw/formResponse" method="POST" target="hidden_iframe" onsubmit="done()">
+                <div class="input-row">
                     <input type="text" name="entry.417685247" placeholder="Seu Nome Completo" required>
-                    <input type="text" name="entry.2102787089" placeholder="WhatsApp (DDD)" required>
-                    <input type="email" name="entry.200111461" placeholder="Seu melhor E-mail" required>
-                    <input type="text" name="entry.1969427602" placeholder="Link da sua rede social principal">
-                    <input type="text" name="entry.2147009100" placeholder="Sua área de atuação" style="grid-column: span 2;">
-                    <textarea name="entry.1440035593" placeholder="Qual seu principal objetivo?" rows="3" style="grid-column: span 2;"></textarea>
-                    <button type="submit" class="btn-glow btn-form" style="grid-column: span 2;">Solicitar Entrada</button>
+                    <input type="text" name="entry.2102787089" placeholder="WhatsApp" required>
                 </div>
+                <div class="input-row">
+                    <input type="email" name="entry.200111461" placeholder="Melhor E-mail" required>
+                    <input type="text" name="entry.1969427602" placeholder="Link Rede Social Principal">
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <input type="text" name="entry.2147009100" placeholder="Área de Atuação / Especialidade">
+                </div>
+                <div style="margin-bottom: 40px;">
+                    <textarea name="entry.1440035593" placeholder="Seu objetivo estratégico no networking?" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Solicitar Entrada</button>
             </form>
             <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
         </div>
     </section>
 
-    <section id="english" class="content-section" style="text-align: center;">
-        <span class="tagline">IMMERSION MENTORING</span>
-        <h2>Mentoria de Inglês <span>Premium</span></h2>
-        <p>A fluência excepcional desenvolvida em anos de vivência real na Europa, agora à sua disposição para destravar sua comunicação global.</p>
-        <a href="https://golnewete-cmyk.github.io/landing-mell/" class="btn-nav" style="padding: 25px 60px; border-color: var(--gold); color: var(--gold);">Acessar Metodologia</a>
+    <section id="english" class="section-container" style="text-align: center;">
+        <span class="label">Global Language</span>
+        <h2>Inglês de <span>Elite.</span></h2>
+        <p class="copy-text" style="margin: 0 auto 50px;">
+            A fluência não é apenas falar, é se posicionar no mundo. Aprenda com a metodologia baseada em quase uma década de vivência europeia.
+        </p>
+        <a href="https://golnewete-cmyk.github.io/landing-mell/" class="btn-minimal" style="padding: 25px 80px; border-color: var(--gold); color: var(--gold); font-weight: 600;">Conhecer Mentoria</a>
     </section>
 
-    <footer style="padding: 60px 20px; text-align: center; opacity: 0.5; font-family: 'Montserrat'; font-size: 0.6rem; letter-spacing: 3px;">
-        &copy; 2026 MELLEN OLIVEIRA | HIGH-END PERSONAL BRANDING
+    <footer style="padding: 100px 20px; text-align: center; border-top: 1px solid var(--glass-border);">
+        <p style="font-size: 0.6rem; letter-spacing: 6px; font-weight: 200; color: var(--gold);">&copy; 2026 MELLEN OLIVEIRA | ALL RIGHTS RESERVED</p>
     </footer>
 
     <script>
-        function showMsg() {
-            document.getElementById('success-msg').style.display = 'block';
+        function done() {
+            const notif = document.getElementById('success-notif');
+            notif.style.display = 'block';
             document.getElementById('netForm').reset();
-            window.scrollTo({
-                top: document.getElementById('networking').offsetTop - 50,
-                behavior: 'smooth'
-            });
+            setTimeout(() => { notif.style.display = 'none'; }, 6000);
         }
     </script>
 
