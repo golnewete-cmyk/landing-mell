@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mellen Oliveira | Excellence & Safety</title>
+    <title>Mellen Oliveira | Posicionamento & Mentalidade de Elite</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@100;300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@100;300;400;600&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #030303;
-            --gold: #C5A059;
-            --gold-bright: #F9E4B7;
-            --glass: rgba(255, 255, 255, 0.02);
-            --border: rgba(197, 160, 89, 0.3);
+            --bg: #050505;
+            --gold: #D4AF37;
+            --silver: #E2E2E2;
+            --orange-bronze: #FF8C00;
+            --premium-gradient: linear-gradient(135deg, #C5A059 0%, #F9E4B7 50%, #D4AF37 100%);
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -22,153 +24,205 @@
             font-family: 'Montserrat', sans-serif; 
             overflow-x: hidden;
             scroll-behavior: smooth;
+            line-height: 1.6;
         }
 
+        /* Fundo Dinâmico Premium */
         .bg-glow {
             position: fixed;
             width: 100vw; height: 100vh;
-            background: radial-gradient(circle at 50% -20%, #1a1a1a 0%, #030303 80%);
+            background: radial-gradient(circle at 10% 10%, #1a1510 0%, #050505 50%),
+                        radial-gradient(circle at 90% 90%, #121212 0%, #050505 50%);
             z-index: -1;
         }
 
+        /* Hero Section */
         .hero {
-            height: 70vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 0 20px;
+            position: relative;
+        }
+
+        .hero-tagline {
+            font-family: 'Montserrat';
+            font-weight: 300;
+            letter-spacing: 12px;
+            color: var(--silver);
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1.5s ease;
         }
 
         .hero h1 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            letter-spacing: 15px;
-            background: linear-gradient(to bottom, #fff 30%, var(--gold) 100%);
+            font-size: clamp(2.5rem, 10vw, 6rem);
+            letter-spacing: 20px;
+            background: linear-gradient(to right, #fff, var(--gold), var(--orange-bronze), #fff);
+            background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: fadeIn 2s ease-out;
+            animation: shine 5s linear infinite;
+            font-weight: 900;
         }
 
-        .hero p {
-            font-weight: 100;
-            letter-spacing: 8px;
+        .hero-sub {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.5rem;
             color: var(--gold);
-            text-transform: uppercase;
-            margin-top: 10px;
-            opacity: 0.8;
+            margin-top: 20px;
+            max-width: 800px;
         }
 
-        section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
-        
-        .section-header { text-align: center; margin-bottom: 80px; }
-        .section-header h2 { 
-            font-family: 'Cinzel', serif; 
-            font-size: 2.2rem; 
-            color: #fff;
-            margin-bottom: 15px;
+        /* Manifesto Section */
+        .manifesto {
+            padding: 120px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
         }
-        .gold-line { width: 60px; height: 1px; background: var(--gold); margin: 0 auto; }
 
-        .safety-grid {
+        .manifesto h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--silver);
+        }
+
+        .manifesto p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #d1d1d1;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .highlight-text {
+            color: var(--gold);
+            font-weight: 600;
+            border-bottom: 1px solid var(--orange-bronze);
+        }
+
+        /* Social Grid Section */
+        .influence-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 20px;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .safety-card {
+        .social-card {
             background: var(--glass);
             border: 1px solid var(--border);
-            padding: 50px 30px;
+            padding: 60px 40px;
             text-align: center;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(10px);
             position: relative;
+            overflow: hidden;
         }
 
-        .safety-card:hover {
-            transform: translateY(-10px);
+        .social-card:hover {
+            transform: translateY(-15px);
             border-color: var(--gold);
-            box-shadow: 0 10px 40px rgba(197, 160, 89, 0.15);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.1);
         }
 
-        .safety-card i {
-            font-size: 3rem;
-            color: var(--gold);
+        .social-card i {
+            font-size: 3.5rem;
             margin-bottom: 25px;
-            transition: 0.5s;
-            filter: drop-shadow(0 0 8px rgba(197, 160, 89, 0.3));
+            background: var(--premium-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .safety-card:hover i {
-            transform: scale(1.15) rotate(5deg);
-            filter: drop-shadow(0 0 15px var(--gold));
+        .social-card h3 {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            color: var(--silver);
         }
 
-        .safety-card h3 { font-family: 'Cinzel', serif; margin-bottom: 15px; letter-spacing: 2px; }
-        .safety-card p { font-size: 0.9rem; color: #ccc; line-height: 1.8; }
-
-        .btn-container { text-align: center; margin-top: 50px; }
-        
+        /* Premium Buttons */
         .btn-premium {
             display: inline-block;
-            padding: 20px 50px;
+            padding: 18px 45px;
             border: 1px solid var(--gold);
             background: transparent;
             color: #fff;
             text-decoration: none;
-            letter-spacing: 3px;
-            font-size: 0.8rem;
+            letter-spacing: 4px;
+            font-size: 0.75rem;
             font-weight: 600;
-            transition: 0.4s;
-            cursor: pointer;
+            transition: 0.5s;
             text-transform: uppercase;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .btn-premium:hover {
-            background: var(--gold);
             color: #000;
-            box-shadow: 0 0 30px rgba(197, 160, 89, 0.4);
-            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
         }
 
-        .english-section {
-            background: linear-gradient(135deg, rgba(197, 160, 89, 0.08) 0%, transparent 100%);
-            border: 1px solid rgba(197, 160, 89, 0.1);
-            padding: 80px 40px;
-            margin-top: 20px;
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 0; height: 100%;
+            background: var(--premium-gradient);
+            transition: 0.5s;
+            z-index: -1;
+        }
+
+        .btn-premium:hover::before { width: 100%; }
+
+        /* Partnership Section */
+        .partnership {
+            padding: 100px 20px;
+            background: linear-gradient(to bottom, transparent, #0a0a0a);
             text-align: center;
-            backdrop-filter: blur(5px);
         }
 
-        .english-copy {
-            max-width: 750px;
-            margin: 0 auto 40px;
-            font-weight: 200;
-            color: #fff;
-            font-size: 1.2rem;
-            line-height: 1.8;
-            letter-spacing: 1px;
+        .partnership-box {
+            border: 1px solid var(--orange-bronze);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            background: rgba(255, 140, 0, 0.02);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+        /* Footer */
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            font-size: 0.65rem;
+            letter-spacing: 5px;
+            color: var(--gold);
+        }
+
+        /* Animations */
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        footer {
-            padding: 80px 0 40px;
-            text-align: center;
-            border-top: 1px solid rgba(197, 160, 89, 0.1);
-            font-size: 0.7rem;
-            letter-spacing: 3px;
-            color: var(--gold);
-            opacity: 0.7;
-        }
-
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; letter-spacing: 8px; }
-            section { padding: 60px 20px; }
+            .hero h1 { font-size: 2.5rem; letter-spacing: 10px; }
+            .influence-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -177,61 +231,63 @@
     <div class="bg-glow"></div>
 
     <header class="hero">
+        <span class="hero-tagline">The Art of Living & Leading</span>
         <h1>MELLEN OLIVEIRA</h1>
-        <p>Segurança Industrial & Comunicação Global</p>
+        <p class="hero-sub">Desenvolvimento Feminino • Posicionamento • Mentalidade Inquieta</p>
+        <a href="#manifesto" style="color: var(--gold); margin-top: 40px; font-size: 2rem; animation: bounce 2s infinite;">
+            <i class="fas fa-chevron-down"></i>
+        </a>
     </header>
 
-    <section id="safety">
-        <div class="section-header">
-            <h2>Safety & Engineering</h2>
-            <div class="gold-line"></div>
-        </div>
+    <section id="manifesto" class="manifesto">
+        <h2>O Manifesto da Inquietude</h2>
+        <p>Minha trajetória nunca foi sobre seguir linhas retas. Da engenharia na Europa às telas do mundo, minha vida é um laboratório de experiências ricas, intensas e, acima de tudo, <span class="highlight-text">sem filtros</span>.</p>
+        <p>Acredito que o verdadeiro luxo é a <b>liberdade de ser quem se é</b>, com um posicionamento inabalável e uma mentalidade preparada para o topo. Aqui, não falamos apenas de estética, falamos de poder, repertório e a coragem de ser inquieta.</p>
+    </section>
 
-        <div class="safety-grid">
-            <div class="safety-card">
-                <i class="fas fa-hard-hat"></i>
-                <h3>Treinamentos Técnicos</h3>
-                <p>Capacitação de alto impacto em segurança ocupacional. Transformamos conformidade legal em excelência operacional e proteção real.</p>
+    <section id="influence">
+        <div class="influence-grid">
+            <div class="social-card">
+                <i class="fab fa-instagram"></i>
+                <h3>Lifestyle & Mindset</h3>
+                <p>Onde o posicionamento encontra a rotina de alto nível. Insights diários sobre mentalidade feminina.</p>
+                <a href="https://www.instagram.com/mellennoliveira?igsh=MW9vZzJ5cmM2MjBhMg==" class="btn-premium" target="_blank">Follow the Journey</a>
             </div>
-            <div class="safety-card">
-                <i class="fas fa-clipboard-check"></i>
-                <h3>Consultoria NR-13</h3>
-                <p>Especialista em inspeções e gestão de segurança. Garantindo que sua infraestrutura opere dentro dos mais rigorosos padrões mundiais.</p>
-            </div>
-            <div class="safety-card">
-                <i class="fas fa-globe"></i>
-                <h3>Logística Corporativa</h3>
-                <p>Coordenação estratégica de engenharia e operações complexas, unindo precisão técnica a uma gestão de agenda impecável.</p>
-            </div>
-        </div>
 
-        <div class="btn-container">
-            <p style="margin-bottom: 25px; color: #aaa; font-size: 0.9rem; letter-spacing: 1px;">Solicite uma proposta personalizada para sua empresa.</p>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=teachermellenoliveira@gmail.com&su=Consultoria em Segurança do Trabalho&body=Olá Mellen, gostaria de entender mais sobre seus serviços de treinamento e consultoria técnica." class="btn-premium" target="_blank">
-                Contatar Consultoria <i class="fas fa-envelope" style="margin-left: 12px;"></i>
-            </a>
+            <div class="social-card">
+                <i class="fab fa-tiktok"></i>
+                <h3>Soy Fuego Latina</h3>
+                <p>Conteúdo viral, dinâmico e focado na mulher que decide não ser mais invisível no mundo moderno.</p>
+                <a href="https://www.tiktok.com/@soyfuegolatina?_r=1&_t=ZS-95qBimpAIky" class="btn-premium" target="_blank">Watch the Fire</a>
+            </div>
+
+            <div class="social-card" style="border-color: var(--orange-bronze);">
+                <i class="fas fa-shopping-bag"></i>
+                <h3>Curadoria de Elite</h3>
+                <p>Minha seleção exclusiva de produtos que elevam sua presença e facilitam sua vida inquieta.</p>
+                <a href="https://vt.tiktok.com/ZS96cCPY6/?page=TikTokShop" class="btn-premium" target="_blank">Shop the Style</a>
+            </div>
         </div>
     </section>
 
-    <section id="english">
-        <div class="section-header">
-            <h2>Elite English Mentoring</h2>
-            <div class="gold-line"></div>
-        </div>
+    <section id="mentorship" style="background: rgba(255,255,255,0.02); padding: 100px 20px; text-align: center;">
+        <h2 style="font-family: 'Cinzel'; letter-spacing: 5px; margin-bottom: 30px;">Elite Mentoring</h2>
+        <p style="max-width: 700px; margin: 0 auto 40px; font-weight: 300;">Para mulheres que buscam a fluência absoluta através de uma metodologia lapidada na Europa (Bélgica & Holanda).</p>
+        <a href="https://golnewete-cmyk.github.io/landing-mell/" class="btn-premium">Descobrir Mentoria</a>
+    </section>
 
-        <div class="english-section">
-            <div class="english-copy">
-                Domine a língua oficial do sucesso global. 
-                Uma metodologia lapidada por anos de imersão profissional na <b>Bélgica e Holanda</b>, desenhada para quem não aceita menos que a fluência absoluta.
-            </div>
-            <a href="https://golnewete-cmyk.github.io/landing-mell/" class="btn-premium">
-                Acessar Mentoria <i class="fas fa-external-link-alt" style="margin-left: 12px;"></i>
+    <section class="partnership">
+        <div class="partnership-box">
+            <h2 style="font-family: 'Cinzel'; margin-bottom: 20px;">Business & Partnerships</h2>
+            <p style="margin-bottom: 40px; color: var(--silver);">Interessado em levar a energia da Mellen Oliveira para sua marca ou evento? Vamos construir algo extraordinário.</p>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=teachermellenoliveira@gmail.com&su=Parceria e Colaboração&body=Olá Mellen, acompanho seu trabalho e gostaria de conversar sobre uma oportunidade de parceria/colaboração." class="btn-premium" target="_blank">
+                Enviar Proposta <i class="fas fa-paper-plane" style="margin-left: 10px;"></i>
             </a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 MELLEN OLIVEIRA | HIGH-END PROFESSIONAL SERVICES</p>
+        <p>EST. 2026 | MELLEN OLIVEIRA | ALL RIGHTS RESERVED</p>
     </footer>
 
 </body>
