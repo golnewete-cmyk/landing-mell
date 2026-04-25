@@ -29,6 +29,18 @@
             line-height: 1.8;
         }
 
+        /* --- CORREÇÃO: ANTI-BRANCO NO AUTOCOMPLETE --- */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus {
+            -webkit-text-fill-color: #fff !important;
+            -webkit-box-shadow: 0 0 0px 1000px #030303 inset !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
         /* Camada de Design Dinâmico */
         .aura-bg {
             position: fixed;
@@ -379,6 +391,19 @@
             A fluência não é apenas falar, é se posicionar no mundo. Aprenda com a metodologia baseada em quase uma década de vivência europeia.
         </p>
         <a href="https://golnewete-cmyk.github.io/landing-mell/" class="btn-minimal" style="padding: 25px 80px; border-color: var(--gold); color: var(--gold); font-weight: 600;">Conhecer Mentoria</a>
+    </section>
+
+    <section id="partnerships" class="section-container" style="text-align: center; border-top: 1px solid var(--glass-border);">
+        <div class="reveal-box">
+            <span class="label">Business & Collabs</span>
+            <h2>Parcerias <span>Estratégicas</span></h2>
+            <p class="copy-text" style="margin: 0 auto 50px;">
+                Para propostas comerciais, campanhas de marca e projetos de colaboração que buscam um posicionamento de alto valor.
+            </p>
+            <a href="mailto:teachermellenoliveira@gmail.com" class="btn-glow insta-glow" style="display: inline-flex; width: auto; margin: 0 auto;">
+                <i class="fas fa-envelope"></i> Contatar para Parceria
+            </a>
+        </div>
     </section>
 
     <footer style="padding: 100px 20px; text-align: center; border-top: 1px solid var(--glass-border);">
