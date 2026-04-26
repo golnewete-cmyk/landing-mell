@@ -9,10 +9,11 @@
     <style>
         :root {
             --bg: #010208;
-            --purple-main: #6c5ce7;
+            --gold: #D4AF37;
+            --silver: #C0C0C0;
+            --orange-detail: #FF8C00;
             --glass: rgba(255, 255, 255, 0.02);
-            --border: rgba(255, 255, 255, 0.08);
-            --accent: #a29bfe;
+            --border: rgba(212, 175, 55, 0.2);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
@@ -25,11 +26,11 @@
             line-height: 1.6;
         }
 
-        /* Fundo com Brilho Estético Mellen */
+        /* Efeito de Aura Dourada/Laranja conforme ID Visual */
         .visual-aura {
             position: fixed;
             width: 100vw; height: 100vh;
-            background: radial-gradient(circle at 50% -20%, rgba(108, 92, 231, 0.15), transparent 70%);
+            background: radial-gradient(circle at 50% -20%, rgba(255, 140, 0, 0.08), transparent 70%);
             z-index: -1;
         }
 
@@ -43,7 +44,7 @@
             font-size: clamp(2.5rem, 6vw, 4.5rem);
             letter-spacing: 15px;
             font-weight: 900;
-            background: linear-gradient(to bottom, #fff, #888);
+            background: linear-gradient(to bottom, #fff, var(--silver), var(--gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 15px;
@@ -51,7 +52,7 @@
 
         .shop-subtitle {
             font-weight: 200;
-            color: rgba(255,255,255,0.5);
+            color: var(--silver);
             letter-spacing: 5px;
             font-size: 0.8rem;
             text-transform: uppercase;
@@ -73,23 +74,19 @@
             transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
             display: flex;
             flex-direction: column;
-            position: relative;
         }
 
         .product-card:hover {
             transform: translateY(-15px);
-            border-color: var(--purple-main);
-            box-shadow: 0 20px 50px rgba(108, 92, 231, 0.2);
+            border-color: var(--gold);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.1);
         }
 
         .product-image {
             width: 100%;
-            height: 400px;
-            background-color: #0a0a0a;
+            height: 450px;
+            background-color: #050505;
             margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
             border: 1px solid rgba(255,255,255,0.03);
         }
@@ -98,36 +95,29 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.8;
             transition: 0.8s;
-        }
-
-        .product-card:hover .product-image img {
-            transform: scale(1.1);
-            opacity: 1;
         }
 
         .product-info h3 {
             font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            letter-spacing: 3px;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
             margin-bottom: 12px;
-            color: #fff;
+            color: var(--gold);
         }
 
         .product-info p {
             font-size: 0.85rem;
-            color: rgba(255,255,255,0.5);
+            color: var(--silver);
             font-weight: 300;
             margin-bottom: 30px;
-            min-height: 50px;
         }
 
         .btn-buy {
             width: 100%;
             padding: 18px;
             background: transparent;
-            border: 1px solid #fff;
+            border: 1px solid var(--silver);
             color: #fff;
             text-decoration: none;
             text-align: center;
@@ -139,15 +129,16 @@
         }
 
         .product-card:hover .btn-buy {
-            background: #fff;
+            background: var(--gold);
             color: #000;
+            border-color: var(--gold);
         }
 
         .leads-section {
             max-width: 850px;
             margin: 120px auto;
             padding: 80px 40px;
-            background: linear-gradient(180deg, rgba(255,255,255,0.01) 0%, rgba(108, 92, 231, 0.05) 100%);
+            background: linear-gradient(180deg, rgba(255,255,255,0.01) 0%, rgba(255, 140, 0, 0.03) 100%);
             border: 1px solid var(--border);
             text-align: center;
         }
@@ -156,22 +147,7 @@
             font-family: 'Cinzel', serif;
             letter-spacing: 8px;
             margin-bottom: 25px;
-            font-size: 1.5rem;
-        }
-
-        .leads-section p {
-            font-weight: 200;
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.4);
-            margin-bottom: 45px;
-            letter-spacing: 2px;
-        }
-
-        .form-group {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin-bottom: 35px;
+            color: var(--gold);
         }
 
         .input-box {
@@ -180,48 +156,23 @@
             border: 1px solid var(--border);
             padding: 22px;
             color: #fff;
+            margin-bottom: 20px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.75rem;
             letter-spacing: 2px;
-            transition: 0.4s;
         }
 
-        .input-box:focus {
-            border-color: var(--purple-main);
-            background: rgba(108, 92, 231, 0.08);
-            box-shadow: 0 0 20px rgba(108, 92, 231, 0.1);
-        }
+        .input-box:focus { border-color: var(--orange-detail); }
 
         .btn-submit {
             width: 100%;
             padding: 22px;
-            background: var(--purple-main);
-            border: none;
-            color: #fff;
+            background: var(--gold);
+            color: #000;
             font-weight: 900;
             letter-spacing: 6px;
             text-transform: uppercase;
             cursor: pointer;
-            transition: 0.5s;
-        }
-
-        .btn-submit:hover {
-            background: #fff;
-            color: #000;
-            transform: scale(1.02);
-        }
-
-        footer {
-            padding: 100px 20px;
-            text-align: center;
-            font-size: 0.6rem;
-            letter-spacing: 6px;
-            opacity: 0.3;
-        }
-
-        @media (max-width: 768px) {
-            .form-group { grid-template-columns: 1fr; }
-            header h1 { letter-spacing: 8px; }
+            border: none;
         }
     </style>
 </head>
@@ -231,7 +182,7 @@
 
     <header>
         <h1>MELLEN SHOP</h1>
-        <div class="shop-subtitle">Curadoria Exclusive • High Performance Selection</div>
+        <div class="shop-subtitle">CURADORIA EXCLUSIVE • HIGH PERFORMANCE SELECTION</div>
     </header>
 
     <div class="shop-grid">
@@ -241,19 +192,19 @@
             </div>
             <div class="product-info">
                 <h3>REGATA VIRGINIA RIO</h3>
-                <p>O hit absoluto do verão. Estilo Brasilcore com modelagem cropped que dita a tendência de 2026.</p>
-                <a href="https://vt.tiktok.com/ZS9NPLR67w2dH-rZJGK/" target="_blank" class="btn-buy">ADQUIRIR NO TIKTOK</a>
+                <p>Estilo icônico e modelagem exclusiva para o alto verão 2026.</p>
+                <a href="https://vt.tiktok.com/ZS9NPLR67w2dH-rZJGK/" target="_blank" class="btn-buy">ADQUIRIR AGORA</a>
             </div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="Captura de tela_20260426_114908_TikTok.jpg" alt="Regata Brasil Cropped">
+                <img src="Captura de tela_20260426_114908_TikTok.jpg" alt="Regata Brasil">
             </div>
             <div class="product-info">
                 <h3>BRASILCORE CROPPED</h3>
-                <p>Essencial para o closet urbano. Estética viral com conforto térmico e ajuste impecável.</p>
-                <a href="https://vt.tiktok.com/ZS9NP8wUDVqhG-9zOt4/" target="_blank" class="btn-buy">ADQUIRIR NO TIKTOK</a>
+                <p>A estética viral com ajuste impecável e conforto térmico de elite.</p>
+                <a href="https://vt.tiktok.com/ZS9NP8wUDVqhG-9zOt4/" target="_blank" class="btn-buy">ADQUIRIR AGORA</a>
             </div>
         </div>
 
@@ -263,8 +214,8 @@
             </div>
             <div class="product-info">
                 <h3>CONJUNTO CANELADO RIO</h3>
-                <p>Estilo verão e vibe Copa do Mundo. Conjunto cropped e short em malha premium ultra confortável.</p>
-                <a href="https://vt.tiktok.com/ZS9NP8TNJoPpp-5Pny2/" target="_blank" class="btn-buy">ADQUIRIR NO TIKTOK</a>
+                <p>Vibe Copa do Mundo 2026 em malha premium ultra macia.</p>
+                <a href="https://vt.tiktok.com/ZS9NP8TNJoPpp-5Pny2/" target="_blank" class="btn-buy">ADQUIRIR AGORA</a>
             </div>
         </div>
 
@@ -274,8 +225,8 @@
             </div>
             <div class="product-info">
                 <h3>ESSENTIALS KIT (10UN)</h3>
-                <p>O básico indispensável. Tecnologia sem costura e toque de seda em cores sortidas.</p>
-                <a href="https://vt.tiktok.com/ZS9NP8qeHX4Dj-Z7yTK/" target="_blank" class="btn-buy">ADQUIRIR NO TIKTOK</a>
+                <p>Conforto absoluto sem costura para a mulher que busca performance.</p>
+                <a href="https://vt.tiktok.com/ZS9NP8qeHX4Dj-Z7yTK/" target="_blank" class="btn-buy">ADQUIRIR AGORA</a>
             </div>
         </div>
 
@@ -285,32 +236,30 @@
             </div>
             <div class="product-info">
                 <h3>SÉRUM CLAREADOR ENVY</h3>
-                <p>Tratamento avançado com Ácido Tranexâmico. Uniformidade e brilho para uma pele de elite.</p>
-                <a href="https://vt.tiktok.com/ZS9NP8xdWfTny-eSyQK/" target="_blank" class="btn-buy">ADQUIRIR NO TIKTOK</a>
+                <p>Alta potência para uniformização do tom e brilho natural.</p>
+                <a href="https://vt.tiktok.com/ZS9NP8xdWfTny-eSyQK/" target="_blank" class="btn-buy">ADQUIRIR AGORA</a>
             </div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="Captura de tela_20260426_114949_TikTok.jpg" alt="Calça Legging Suplex">
+                <img src="Captura de tela_20260426_114949_TikTok.jpg" alt="Calça Legging">
             </div>
             <div class="product-info">
-                <h3>LEGGING SUPLEX SUPREME</h3>
-                <p>Zero transparência e alta compressão. Performance máxima para o treino ou dia a dia.</p>
-                <a href="https://vt.tiktok.com/ZS9NP8AwrKHCc-YToWV/" target="_blank" class="btn-buy">ADQUIRIR NO TIKTOK</a>
+                <h3>LEGGING SUPREME</h3>
+                <p>Zero transparência e alta compressão para treinos de alta intensidade.</p>
+                <a href="https://vt.tiktok.com/ZS9NP8AwrKHCc-YToWV/" target="_blank" class="btn-buy">ADQUIRIR AGORA</a>
             </div>
         </div>
     </div>
 
     <section class="leads-section">
         <h2>VIP LIST ACCESS</h2>
-        <p>Receba ofertas exclusivas e drop de novos itens Mellen antes do lançamento oficial.</p>
+        <p>CONECTE-SE COM A ELITE MELLEN</p>
         
-        <form action="#" method="POST">
-            <div class="form-group">
-                <input type="text" name="name" class="input-box" placeholder="NOME COMPLETO" required>
-                <input type="email" name="email" class="input-box" placeholder="MELHOR E-MAIL" required>
-            </div>
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSfu6H8XU_ZidC7h1u56D8C6qA_979685/formResponse" method="POST" target="_self">
+            <input type="text" name="entry.1775061840" class="input-box" placeholder="NOME COMPLETO" required>
+            <input type="email" name="entry.2073215616" class="input-box" placeholder="MELHOR E-MAIL" required>
             <button type="submit" class="btn-submit">ENTRAR NA LISTA</button>
         </form>
     </section>
@@ -318,6 +267,5 @@
     <footer>
         &copy; 2026 MELLEN SHOP | HIGH-END SOLUTIONS
     </footer>
-
 </body>
 </html>
