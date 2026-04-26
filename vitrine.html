@@ -3,177 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MELLEN SHOP | EXCLUSIVE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>MELLEN | Official Selection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --black: #000000;
             --gold: #D4AF37;
             --orange: #FF6B00;
-            --silver: #E0E0E0;
-            --glass: rgba(255, 255, 255, 0.03);
+            --silver: #A8A8A8;
+            --border: rgba(212, 175, 55, 0.3);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--black); color: #fff; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        body { background-color: var(--black); color: #fff; font-family: 'Montserrat', sans-serif; line-height: 1.6; }
 
-        /* Header Luxo */
+        /* Header Estilo Boutique */
         header { 
-            padding: 100px 20px 60px; 
-            text-align: center; 
+            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; border-bottom: 1px solid var(--border);
             background: radial-gradient(circle at center, #111 0%, #000 100%);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
         h1 { 
-            font-family: 'Cinzel', serif; 
-            font-size: clamp(2.5rem, 8vw, 4.5rem); 
-            color: var(--gold); 
-            letter-spacing: 15px; 
-            text-transform: uppercase;
+            font-family: 'Cinzel', serif; font-size: clamp(3rem, 10vw, 6rem); 
+            letter-spacing: 20px; color: var(--gold); text-transform: uppercase; margin-bottom: 10px;
         }
-        .subtitle { color: var(--orange); letter-spacing: 6px; font-size: 0.8rem; margin-top: 15px; font-weight: 300; }
+        .tagline { color: var(--orange); letter-spacing: 8px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; }
 
-        /* Grid de Produtos */
-        .container { max-width: 1300px; margin: 60px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; padding: 20px; }
+        /* Grade de Curadoria */
+        .container { max-width: 1200px; margin: 100px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 60px; padding: 20px; }
 
-        .card { 
-            background: var(--glass); 
-            border: 1px solid rgba(255,255,255,0.05); 
-            padding: 20px; 
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-            text-align: center;
+        .product-box { 
+            border-left: 1px solid var(--border); padding-left: 30px; 
+            transition: 0.5s; position: relative;
         }
-        .card:hover { border-color: var(--gold); transform: translateY(-15px); box-shadow: 0 10px 40px rgba(212, 175, 55, 0.1); }
+        .product-box:hover { border-left-color: var(--orange); }
 
-        .img-container { width: 100%; height: 480px; overflow: hidden; background: #050505; border: 1px solid #111; }
-        .img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
-        .card:hover .img-container img { transform: scale(1.08); }
+        .category { font-size: 0.6rem; color: var(--silver); letter-spacing: 3px; margin-bottom: 10px; display: block; }
+        .product-box h3 { font-family: 'Cinzel', serif; font-size: 1.5rem; color: var(--gold); margin-bottom: 15px; }
+        .copy { font-size: 0.9rem; color: #888; margin-bottom: 30px; min-height: 80px; font-weight: 200; }
 
-        .card h3 { font-family: 'Cinzel', serif; color: var(--gold); margin: 20px 0 10px; font-size: 1.1rem; letter-spacing: 2px; }
-        .card p { font-size: 0.8rem; color: var(--silver); margin-bottom: 25px; line-height: 1.6; opacity: 0.7; }
-
-        .btn-buy { 
-            display: block; width: 100%; padding: 18px; 
-            border: 1px solid var(--orange); color: #fff; 
-            text-decoration: none; font-weight: 900; font-size: 0.75rem; 
-            letter-spacing: 3px; text-transform: uppercase; transition: 0.4s;
+        /* Botão de Compra Minimalista */
+        .btn-shop { 
+            display: inline-block; padding: 15px 40px; border: 1px solid var(--gold);
+            color: var(--gold); text-decoration: none; font-size: 0.7rem; letter-spacing: 4px;
+            text-transform: uppercase; font-weight: 600; transition: 0.4s;
         }
-        .btn-buy:hover { background: var(--orange); color: #fff; box-shadow: 0 0 20px rgba(255, 107, 0, 0.4); }
+        .btn-shop:hover { background: var(--gold); color: #000; box-shadow: 0 0 30px rgba(212, 175, 55, 0.2); }
 
-        /* VIP LIST - Form Conectado */
-        .vip-section { 
-            max-width: 650px; margin: 120px auto; padding: 60px 40px; 
-            background: #050505; border: 1px solid var(--gold); 
-            text-align: center; position: relative;
+        /* Seção VIP Master */
+        .vip-access { 
+            background: #050505; padding: 120px 20px; border-top: 1px solid var(--border);
+            text-align: center; margin-top: 100px;
         }
-        .vip-section h2 { font-family: 'Cinzel', serif; color: var(--orange); font-size: 2rem; margin-bottom: 15px; letter-spacing: 5px; }
-        .vip-section p { color: var(--silver); margin-bottom: 40px; font-size: 0.9rem; }
+        .vip-access h2 { font-family: 'Cinzel', serif; font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; }
+        .vip-access p { color: var(--silver); max-width: 600px; margin: 0 auto 50px; font-weight: 200; letter-spacing: 1px; }
 
-        .form-group { display: flex; flex-direction: column; gap: 20px; }
+        .form-mellen { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
         input { 
-            width: 100%; padding: 20px; background: #000; 
-            border: 1px solid #222; color: #fff; 
-            font-family: 'Montserrat', sans-serif; font-size: 1rem;
-            transition: 0.3s;
+            background: transparent; border: none; border-bottom: 1px solid #333; 
+            padding: 20px; color: #fff; font-family: 'Montserrat', sans-serif; transition: 0.3s;
         }
-        input:focus { border-color: var(--gold); outline: none; }
+        input:focus { border-bottom-color: var(--orange); }
 
-        .btn-submit { 
-            width: 100%; padding: 20px; background: var(--gold); 
-            color: #000; border: none; font-weight: 900; 
-            font-size: 1rem; cursor: pointer; letter-spacing: 4px; 
-            text-transform: uppercase; transition: 0.4s;
+        .submit-exclusive { 
+            background: var(--gold); color: #000; padding: 20px; border: none;
+            font-weight: 900; letter-spacing: 5px; cursor: pointer; text-transform: uppercase;
+            margin-top: 20px; transition: 0.3s;
         }
-        .btn-submit:hover { background: #fff; transform: scale(1.02); }
+        .submit-exclusive:hover { background: #fff; letter-spacing: 7px; }
 
-        #success-msg { display: none; color: var(--gold); font-size: 1.2rem; font-weight: 900; letter-spacing: 2px; }
+        #success-state { display: none; font-family: 'Cinzel', serif; color: var(--orange); font-size: 1.2rem; margin-top: 40px; }
 
-        footer { padding: 60px; text-align: center; font-size: 0.7rem; color: #444; letter-spacing: 5px; }
+        footer { padding: 80px; text-align: center; color: #333; font-size: 0.6rem; letter-spacing: 5px; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>MELLEN</h1>
-        <div class="subtitle">EXCLUSIVE CURATORSHIP • HIGH PERFORMANCE</div>
+        <p class="tagline">Ecossistema de Alta Performance</p>
     </header>
 
     <div class="container">
-        <div class="card">
-            <div class="img-container">
-                <img src="Captura%20de%20tela_20260426_114848_TikTok.jpg" alt="Regata Virginia">
-            </div>
-            <h3>REGATA VIRGINIA RIO</h3>
-            <p>Modelagem exclusiva Brasilcore. O toque de sofisticação que seu closet exige.</p>
-            <a href="https://vt.tiktok.com/ZS9NPLR67w2dH-rZJGK/" target="_blank" class="btn-buy">ADQUIRIR AGORA</a>
+        <div class="product-box">
+            <span class="category">Rio Selection</span>
+            <h3>Regata Virginia</h3>
+            <p class="copy">A união entre a estética Brasilcore e o corte de alta costura. Projetada para quem não aceita nada menos que o impecável.</p>
+            <a href="https://vt.tiktok.com/ZS9NPLR67w2dH-rZJGK/" class="btn-shop">Adquirir Peça</a>
         </div>
 
-        <div class="card">
-            <div class="img-container">
-                <img src="Captura%20de%20tela_20260426_114908_TikTok.jpg" alt="Regata Brasil">
-            </div>
-            <h3>BRASILCORE CROPPED</h3>
-            <p>O hit viral. Conforto térmico e ajuste impecável para performance urbana.</p>
-            <a href="https://vt.tiktok.com/ZS9NP8wUDVqhG-9zOt4/" target="_blank" class="btn-buy">ADQUIRIR AGORA</a>
+        <div class="product-box">
+            <span class="category">Trend Leader</span>
+            <h3>Corset Brasil Cropped</h3>
+            <p class="copy">Arquitetura têxtil que redefine a silhueta. Mais que uma tendência, um manifesto de presença e poder.</p>
+            <a href="https://vt.tiktok.com/ZS9NP8wUDVqhG-9zOt4/" class="btn-shop">Adquirir Peça</a>
         </div>
 
-        <div class="card">
-            <div class="img-container">
-                <img src="Captura%20de%20tela_20260426_114923_TikTok.jpg" alt="Conjunto Rio">
-            </div>
-            <h3>CONJUNTO CANELADO RIO</h3>
-            <p>Vibe premium. A união perfeita entre lounge e street wear de alto padrão.</p>
-            <a href="https://vt.tiktok.com/ZS9NP8TNJoPpp-5Pny2/" target="_blank" class="btn-buy">ADQUIRIR AGORA</a>
+        <div class="product-box">
+            <span class="category">Performance & Style</span>
+            <h3>Conjunto Canelado Rio</h3>
+            <p class="copy">O equilíbrio perfeito entre a liberdade do movimento e a sofisticação do design minimalista. Vibe 2026.</p>
+            <a href="https://vt.tiktok.com/ZS9NP8TNJoPpp-5Pny2/" class="btn-shop">Adquirir Peça</a>
         </div>
 
-        <div class="card">
-            <div class="img-container">
-                <img src="Captura%20de%20tela_20260426_114933_TikTok.jpg" alt="Kit Calcinhas">
-            </div>
-            <h3>ESSENTIALS KIT (10UN)</h3>
-            <p>O básico de luxo. Tecnologia sem costura e toque de seda indispensável.</p>
-            <a href="https://vt.tiktok.com/ZS9NP8qeHX4Dj-Z7yTK/" target="_blank" class="btn-buy">ADQUIRIR AGORA</a>
+        <div class="product-box">
+            <span class="category">Essentials</span>
+            <h3>Kit Silk Touch (10un)</h3>
+            <p class="copy">Tecnologia sem costura com toque de seda. O conforto invisível que sustenta a confiança da mulher moderna.</p>
+            <a href="https://vt.tiktok.com/ZS9NP8qeHX4Dj-Z7yTK/" class="btn-shop">Adquirir Peça</a>
         </div>
 
-        <div class="card">
-            <div class="img-container">
-                <img src="Captura%20de%20tela_20260426_114943_TikTok.jpg" alt="Sérum Envy">
-            </div>
-            <h3>SÉRUM ENVYSKIN</h3>
-            <p>Tecnologia avançada para uniformização e brilho radiante da pele.</p>
-            <a href="https://vt.tiktok.com/ZS9NP8xdWfTny-eSyQK/" target="_blank" class="btn-buy">ADQUIRIR AGORA</a>
+        <div class="product-box">
+            <span class="category">Skin Science</span>
+            <h3>Sérum EnvySkin</h3>
+            <p class="copy">Fórmula molecular avançada para uma pele de porcelana. A ciência do rejuvenescimento ao alcance da sua rotina.</p>
+            <a href="https://vt.tiktok.com/ZS9NP8xdWfTny-eSyQK/" class="btn-shop">Adquirir Peça</a>
         </div>
 
-        <div class="card">
-            <div class="img-container">
-                <img src="Captura%20de%20tela_20260426_114949_TikTok.jpg" alt="Legging">
-            </div>
-            <h3>LEGGING SUPREME</h3>
-            <p>Zero transparência. Compressão inteligente para máxima performance física.</p>
-            <a href="https://vt.tiktok.com/ZS9NP8AwrKHCc-YToWV/" target="_blank" class="btn-buy">ADQUIRIR AGORA</a>
+        <div class="product-box">
+            <span class="category">High Compression</span>
+            <h3>Legging Supreme</h3>
+            <p class="copy">Zero transparência. Máxima compressão. Engenharia focada em performance para quem exige o topo.</p>
+            <a href="https://vt.tiktok.com/ZS9NP8AwrKHCc-YToWV/" class="btn-shop">Adquirir Peça</a>
         </div>
     </div>
 
-    <section class="vip-section">
+    <section class="vip-access">
         <h2>VIP LIST ACCESS</h2>
-        <p>Receba lançamentos exclusivos e drops limitados em primeira mão.</p>
+        <p>Acesso antecipado a drops limitados e curadorias que nunca chegam ao público geral. Entre para o círculo interno.</p>
 
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){document.getElementById('form-mellen').style.display='none';document.getElementById('success-msg').style.display='block';}"></iframe>
+        <iframe name="frame_submit" style="display:none;" onload="if(sent){showSuccess();}"></iframe>
 
-        <form id="form-mellen" action="https://docs.google.com/forms/d/e/1FAIpQLScMXbeRqCg2E9lkG20mfrILv4EBhqeC1jORkx7-Ka6YV8154A/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-            <div class="form-group">
-                <input type="text" name="entry.1775061840" placeholder="NOME COMPLETO" required>
-                <input type="email" name="entry.2073215616" placeholder="SEU MELHOR E-MAIL" required>
-                <button type="submit" class="btn-submit">GARANTIR ACESSO</button>
-            </div>
+        <form id="form-mellen" action="https://docs.google.com/forms/d/e/1FAIpQLScMXbeRqCg2E9lkG20mfrILv4EBhqeC1jORkx7-Ka6YV8154A/formResponse" method="POST" target="frame_submit" onsubmit="sent=true;" class="form-mellen">
+            <input type="text" name="entry.1775061840" placeholder="NOME COMPLETO" required>
+            <input type="email" name="entry.2073215616" placeholder="E-MAIL PESSOAL" required>
+            <button type="submit" class="submit-exclusive">Garantir Lugar na Lista</button>
         </form>
-        <div id="success-msg">MENSAGEM ENVIADA. BEM-VINDO AO ECOSSISTEMA MELLEN.</div>
+
+        <div id="success-state">ACESSO SOLICITADO. AGUARDE NOSSO CONTATO.</div>
     </section>
 
     <footer>
-        &copy; 2026 MELLEN SHOP | HIGH-END SOLUTIONS
+        &copy; 2026 MELLEN SHOP | CURADORIA DE ELITE
     </footer>
 
-    <script>var submitted=false;</script>
+    <script>
+        var sent = false;
+        function showSuccess() {
+            document.getElementById('form-mellen').style.display = 'none';
+            document.getElementById('success-state').style.display = 'block';
+        }
+    </script>
+
 </body>
 </html>
