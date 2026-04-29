@@ -357,33 +357,34 @@
         </div>
     </section>
 
-<section id="networking" class="section-container">
-    <div class="form-section">
-        <span class="label">Private Circle</span>
-        <h2>Access the <span>Networking</span></h2>
-        <p class="copy-text">Para parcerias, trocas de alto valor e conexões estratégicas. Preencha os detalhes e aguarde o contato para entrada no círculo restrito.</p>
+<section id="networking" class="section-container" style="background-color: #030303; padding: 100px 20px;">
+    <div class="form-section" style="max-width: 900px; margin: 0 auto; border: 1px solid rgba(255, 255, 255, 0.08); padding: 60px; background: linear-gradient(180deg, #050505 0%, #0a0a0a 100%);">
+        
+        <span class="label" style="color: #FF6B00; font-weight: 600; font-size: 0.8rem; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 20px; display: block;">Private Circle</span>
+        <h2 style="font-family: 'Cinzel', serif; font-size: clamp(2rem, 5vw, 3.5rem); color: #fff; margin-bottom: 40px; font-weight: 400;">Access the <span style="color: #D4AF37;">Networking</span></h2>
+        <p class="copy-text" style="font-size: 1.1rem; font-weight: 200; color: #aaa; margin-bottom: 50px;">Conecte-se ao ecossistema de elite. Preencha seus dados para análise de perfil e entrada no círculo restrito.</p>
         
         <form id="netForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfRglfXn_F17GRbUIc_lrbeDP8wHrvJNV7uqC7_YJSOke6-Kw/formResponse" method="POST" target="hidden_iframe" onsubmit="done()">
             
-            <div class="input-row">
-                <input type="text" name="entry.417685247" placeholder="Qual é seu nome?" required>
-                <input type="text" name="entry.2102787089" placeholder="WhatsApp" required>
+            <div class="input-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 30px;">
+                <input type="text" name="entry.417685247" placeholder="Qual é seu nome?" required style="width: 100%; padding: 20px; background: transparent; border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: 'Montserrat';">
+                <input type="text" name="entry.2102787089" placeholder="WhatsApp" required style="width: 100%; padding: 20px; background: transparent; border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: 'Montserrat';">
             </div>
             
-            <div class="input-row">
-                <input type="email" name="entry.200111461" placeholder="Seu melhor e-mail" required>
-                <input type="text" name="entry.1969427602" placeholder="Rede social principal (Link)">
+            <div class="input-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 30px;">
+                <input type="email" name="entry.200111461" placeholder="Seu melhor e-mail" required style="width: 100%; padding: 20px; background: transparent; border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: 'Montserrat';">
+                <input type="text" name="entry.1969427602" placeholder="Rede social principal (Link)" style="width: 100%; padding: 20px; background: transparent; border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: 'Montserrat';">
             </div>
             
             <div style="margin-bottom: 30px;">
-                <input type="text" name="entry.2147009100" placeholder="Área de atuação e/ou especialidades">
+                <input type="text" name="entry.2147009100" placeholder="Área de atuação e/ou especialidades" style="width: 100%; padding: 20px; background: transparent; border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: 'Montserrat';">
             </div>
             
             <div style="margin-bottom: 40px;">
-                <textarea name="entry.1440035593" placeholder="Principal objetivo hoje?" rows="4" style="width: 100%; padding: 20px; background: transparent; border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: 'Montserrat'; font-weight: 200;"></textarea>
+                <textarea name="entry.1440035593" placeholder="Principal objetivo hoje?" rows="4" style="width: 100%; padding: 20px; background: transparent; border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: 'Montserrat'; resize: none;"></textarea>
             </div>
             
-            <button type="submit" class="btn-submit">Solicitar Entrada</button>
+            <button type="submit" class="btn-submit" style="background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728); color: #000; width: 100%; padding: 25px; border: none; font-weight: 800; text-transform: uppercase; letter-spacing: 8px; cursor: pointer; transition: 0.5s;">Solicitar Entrada</button>
         </form>
 
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
