@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mellen Oliveira | Executive Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Paleta de Cores: Inspirada no Gold e Black dos prints */
+            --gold-primary: #D4AF37;
+            --gold-light: #F9E79F;
+            --bg-dark: #050505;
+            --card-bg: rgba(25, 25, 25, 0.6); /* Glassmorphism */
+            --border-glow: rgba(212, 175, 55, 0.3);
+            --text-dark: #A0A0A0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* Mantém as partículas dentro */
+            position: relative;
+        }
+
+        /* Efeitos de Fundo Dinâmico (Simulação das partículas do código original) */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+            z-index: -2;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        /* Container Principal do Painel */
+        .dashboard-container {
+            width: 90%;
+            max-width: 1200px;
+            text-align: center;
+            z-index: 10;
+        }
+
+        /* Cabeçalho do Painel (ID Visual de Mellen) */
+        .header {
+            margin-bottom: 50px;
+        }
+
+        .slogan {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .main-title {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 48px;
+            font-weight: 700;
+            text-transform: uppercase;
+            background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 36px;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: var(--gold-primary);
+            letter-spacing: 1px;
+        }
+
+        /* Grid dos Cartões de Link */
+        .grid-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Estilo dos Cartões (Efeitos do código original) */
+        .card-link {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 30px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Efeito de Glow e Float no Hover */
+        .card-link:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold-primary);
+            box-shadow: 0 10px 30px var(--border-glow);
+        }
+
+        /* Ícone */
+        .icon-box {
+            font-size: 40px;
+            color: var(--gold-primary);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .card-link:hover .icon-box {
+            transform: scale(1.1);
+        }
+
+        /* Título do Link (Serif) */
+        .card-title {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            color: var(--gold-light);
+        }
+
+        /* Descrição (Sans-serif leve) */
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-dark);
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        /* Cartão "Em Construção" */
+        .card-disabled {
+            cursor: default;
+            opacity: 0.7;
+            border-style: dashed;
+        }
+
+        .card-disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .badge {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--gold-primary);
+            font-size: 10px;
+            text-transform: uppercase;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-top: 15px;
+            letter-spacing: 1px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <div class="dashboard-container">
+        <div class="header">
+            <div class="slogan">Quiet Luxury & Bold Mindset</div>
+            <div class="main-title">MELLEN</div>
+            <div class="subtitle">OLIVEIRA</div>
+        </div>
+
+        <div class="grid-links">
+            
+            <a href="https://landing-mell-vjtbor2mwy7a5btnvcgnuk.streamlit.app/" target="_blank" class="card-link">
+                <div class="icon-box">✦</div> <div class="card-title">Inteligência Editorial</div>
+                <div class="card-desc">Plataforma estratégica para análise e criação de conteúdo de alto impacto.</div>
+            </a>
+
+            <a href="https://docs.google.com/spreadsheets/d/13JLDStB0kphNMIQpYRfZl77cT9A9g1yU2JmbloJ6ZcY/edit?usp=sharing" target="_blank" class="card-link">
+                <div class="icon-box">⚙</div> <div class="card-title">Gestão Interna</div>
+                <div class="card-desc">Controle operacional, métricas de crescimento e fluxos de trabalho Mellen.</div>
+            </a>
+
+            <div class="card-link card-disabled">
+                <div class="icon-box">⏳</div> <div class="card-title">Novas Ferramentas</div>
+                <div class="card-desc">O ecossistema Mellen Oliveira está em constante evolução.</div>
+                <div class="badge">Em Construção</div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js',
+        {
+            "particles": {
+                "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#D4AF37" }, // Partículas Douradas
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.3, "random": true },
+                "size": { "value": 2, "random": true },
+                "line_linked": { "enable": false },
+                "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
+            },
+            "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": false } } },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
+
